@@ -1,0 +1,11 @@
+{
+  "recommended_pv_bess_capacity_mwe": 137,
+  "recommended_pv_bess_storage_mwh": 324,
+  "recommended_pv_bess_area_ha": 213.6,
+  "recommended_nature_area_ha": 1813.9,
+  "recommended_water_area_ha": 294.0,
+  "recommended_industrial_area_ha": 0.0,
+  "sensitivity_min_stable_area_choices_pct": 84.4,
+  "sensitivity_pv_bess_capacity_min_mwe": 137,
+  "sensitivity_pv_bess_capacity_max_mwe": 292
+}

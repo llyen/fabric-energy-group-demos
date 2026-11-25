@@ -1,0 +1,17 @@
+file,rows
+dim_ash_storage.csv,6
+dim_coal_yard.csv,6
+dim_cooling_pond.csv,5
+dim_decommissioning_package.csv,31
+dim_environmental_monitoring_point.csv,56
+dim_fuel_supply_site.csv,2
+dim_land_use_after_reclamation.csv,128
+dim_location.csv,4
+dim_power_unit.csv,17
+dim_reclamation_area.csv,32
+dim_water_body.csv,12
+fact_capex.csv,191
+fact_environmental_decision.csv,32
+fact_environmental_monitoring.csv,1344
+fact_jobs_transition.csv,640
+fact_permit.csv,32

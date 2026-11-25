@@ -1,0 +1,9 @@
+{
+  "locations_high_or_critical": 4,
+  "monitoring_events": 1344,
+  "monitoring_exceedance_events": 279,
+  "max_environmental_risk_index": 68.5,
+  "highest_risk_location_id": "LOC_ALF",
+  "sensitivity_top_location_stable": false,
+  "sensitivity_max_abs_rank_change": 1
+}

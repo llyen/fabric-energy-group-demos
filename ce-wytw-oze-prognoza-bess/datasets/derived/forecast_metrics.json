@@ -1,0 +1,12 @@
+{
+  "installed_capacity_mw": 554.0,
+  "test_intervals": 480,
+  "model_mae_mwh": 7.1038,
+  "model_rmse_mwh": 10.2873,
+  "model_nmae_pct_installed_capacity": 5.129,
+  "baseline_mae_mwh": 17.2162,
+  "baseline_rmse_mwh": 24.6187,
+  "baseline_nmae_pct_installed_capacity": 12.43,
+  "nmae_improvement_pct": 58.74,
+  "weather_feature_note": "Model używa syntetycznej prognozy pogody z błędem, nie realizacji pogody użytej do wygenerowania produkcji. Usunięto krótkoterminowy lag_4 z narracji day-ahead."
+}

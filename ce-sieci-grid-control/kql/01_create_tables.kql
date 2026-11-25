@@ -1,0 +1,28 @@
+// KQL DB: GridControl
+.create table ScadaFeederTelemetry (
+  event_timestamp_utc:datetime, event_timestamp_local:datetime, local_timezone:string,
+  settlement_interval:string, source_system:string, quality_flag:string, ingestion_timestamp:datetime,
+  data_version:string, feeder_id:string, substation_id:string, branch_id:string,
+  voltage_kv:real, current_a:real, active_power_mw:real, breaker_state:string,
+  operational_status:string, storm_intensity:real
+)
+.create table RecloserEvents (
+  event_timestamp_utc:datetime, event_timestamp_local:datetime, local_timezone:string,
+  settlement_interval:string, source_system:string, quality_flag:string, ingestion_timestamp:datetime,
+  data_version:string, feeder_id:string, section_id:string, event_type:string,
+  fault_current_a:real, operation_no:int
+)
+.create table AmiVoltageEvents (
+  event_timestamp_utc:datetime, event_timestamp_local:datetime, local_timezone:string,
+  settlement_interval:string, source_system:string, quality_flag:string, ingestion_timestamp:datetime,
+  data_version:string, feeder_id:string, section_id:string, connection_point_id:string,
+  event_type:string, voltage_v:real
+)
+.create table WeatherMinute (
+  event_timestamp_utc:datetime, event_timestamp_local:datetime, local_timezone:string,
+  settlement_interval:string, source_system:string, quality_flag:string, ingestion_timestamp:datetime,
+  data_version:string, weather_cell_id:string, branch_id:string, voivodeship_code:string,
+  wind_gust_ms:real, lightning_count:int, precip_mm_h:real, icing_index:real, storm_intensity:real
+)
+.create table RiskScores (event_timestamp_local:datetime, feeder_id:string, branch_id:string, target_outage_next_6h:int, risk_score:real, risk_decile:int)
+.create table SwitchingRecommendations (fault_id:string, tie_switch_id:string, source_feeder_id:string, target_feeder_id:string, affected_customers:int, restored_customers:int, feasible:bool, rejection_reason:string)

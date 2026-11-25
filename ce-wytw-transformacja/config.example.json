@@ -1,0 +1,208 @@
+{
+  "fabric": {
+    "workspace_name": "ce-wytw-transformacja-demo",
+    "lakehouse_name": "lh_wytwarzanie_transformacja",
+    "eventhouse_name": "eh_wytwarzanie_monitoring",
+    "semantic_model_name": "sm_wytwarzanie_transformacja"
+  },
+  "realtime": {
+    "endpoint_url": "https://example.eventstream.fabric.microsoft.com/ingest",
+    "tenant_id": "00000000-0000-0000-0000-000000000000",
+    "dry_run": true
+  },
+  "security": {
+    "use_managed_identity": true,
+    "purview_label": "Demo - synthetic data"
+  },
+  "model_assumptions": {
+    "land_use_scoring": {
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta",
+      "source_or_rationale": "Wagi demonstracyjne porządkują rozmowę decyzyjną; nie są wartością branżową ani wynikiem uczenia na danych klienta.",
+      "final_score_weights": {
+        "base_suitability": {
+          "value": 0.42,
+          "meaning": "dopasowanie wariantu do obszaru wg ograniczeń lokalnych"
+        },
+        "readiness": {
+          "value": 0.18,
+          "meaning": "premia za wcześniejszą gotowość decyzji i wykorzystania terenu"
+        },
+        "environment": {
+          "value": 0.18,
+          "meaning": "wpływ ryzyk gleby, wód i przekroczeń monitoringu"
+        },
+        "grid": {
+          "value": 0.14,
+          "meaning": "bliskość infrastruktury przyłączeniowej"
+        },
+        "capacity": {
+          "value": 0.08,
+          "meaning": "potencjał mocy elektrycznej tylko dla wariantu PV_BESS"
+        }
+      },
+      "environment_score_weights": {
+        "soil_risk": {
+          "value": 0.45,
+          "meaning": "udział ryzyka gleby w komponencie środowiskowym"
+        },
+        "water_risk": {
+          "value": 0.45,
+          "meaning": "udział ryzyka wód w komponencie środowiskowym"
+        },
+        "exceedance_rate": {
+          "value": 0.1,
+          "meaning": "udział częstości przekroczeń monitoringu w komponencie środowiskowym"
+        }
+      },
+      "sensitivity_scenarios": {
+        "base": {
+          "base_suitability": 0.42,
+          "readiness": 0.18,
+          "environment": 0.18,
+          "grid": 0.14,
+          "capacity": 0.08,
+          "soil_risk": 0.45,
+          "water_risk": 0.45,
+          "exceedance_rate": 0.1
+        },
+        "environment_priority": {
+          "base_suitability": 0.34,
+          "readiness": 0.16,
+          "environment": 0.3,
+          "grid": 0.12,
+          "capacity": 0.08,
+          "soil_risk": 0.4,
+          "water_risk": 0.5,
+          "exceedance_rate": 0.1
+        },
+        "readiness_priority": {
+          "base_suitability": 0.36,
+          "readiness": 0.3,
+          "environment": 0.16,
+          "grid": 0.1,
+          "capacity": 0.08,
+          "soil_risk": 0.45,
+          "water_risk": 0.45,
+          "exceedance_rate": 0.1
+        },
+        "grid_priority": {
+          "base_suitability": 0.36,
+          "readiness": 0.16,
+          "environment": 0.16,
+          "grid": 0.24,
+          "capacity": 0.08,
+          "soil_risk": 0.45,
+          "water_risk": 0.45,
+          "exceedance_rate": 0.1
+        }
+      },
+      "score_transform_parameters": {
+        "readiness_year_penalty_points": {
+          "value": 4.0,
+          "meaning": "spadek punktacji gotowości za każdy rok po 2026",
+          "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+        },
+        "grid_distance_penalty_points_per_km": {
+          "value": 4.5,
+          "meaning": "spadek punktacji za każdy kilometr od przyłącza",
+          "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+        }
+      }
+    },
+    "environmental_risk": {
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta",
+      "source_or_rationale": "Indeks demonstracyjny porządkuje ryzyka i luki decyzyjne; wagi wymagają warsztatu z EHS, hydrologią i właścicielami decyzji.",
+      "index_weights": {
+        "avg_point_risk": {
+          "value": 0.36,
+          "meaning": "zagregowany sygnał z punktów monitoringu"
+        },
+        "avg_soil_risk": {
+          "value": 0.2,
+          "meaning": "ryzyko gleby z obszarów rekultywacji"
+        },
+        "avg_water_risk": {
+          "value": 0.22,
+          "meaning": "ryzyko wodne z obszarów rekultywacji"
+        },
+        "max_legal_constraint": {
+          "value": 0.1,
+          "meaning": "najwyższe ograniczenie formalnoprawne"
+        },
+        "not_started_decision_share": {
+          "value": 0.07,
+          "meaning": "udział decyzji środowiskowych nierozpoczętych"
+        },
+        "high_appeal_share": {
+          "value": 0.05,
+          "meaning": "udział decyzji z wysokim ryzykiem odwołania"
+        }
+      },
+      "point_risk_weights": {
+        "exceedances": {
+          "value": 12.0,
+          "meaning": "punkty za każde przekroczenie w historii punktu"
+        },
+        "max_threshold_ratio": {
+          "value": 35.0,
+          "meaning": "waga maksymalnego przekroczenia progu"
+        },
+        "avg_threshold_ratio": {
+          "value": 20.0,
+          "meaning": "waga średniego wykorzystania progu"
+        }
+      },
+      "sensitivity_scenarios": {
+        "base": {
+          "avg_point_risk": 0.36,
+          "avg_soil_risk": 0.2,
+          "avg_water_risk": 0.22,
+          "max_legal_constraint": 0.1,
+          "not_started_decision_share": 0.07,
+          "high_appeal_share": 0.05
+        },
+        "monitoring_priority": {
+          "avg_point_risk": 0.5,
+          "avg_soil_risk": 0.16,
+          "avg_water_risk": 0.16,
+          "max_legal_constraint": 0.08,
+          "not_started_decision_share": 0.06,
+          "high_appeal_share": 0.04
+        },
+        "geo_hydro_priority": {
+          "avg_point_risk": 0.28,
+          "avg_soil_risk": 0.28,
+          "avg_water_risk": 0.28,
+          "max_legal_constraint": 0.08,
+          "not_started_decision_share": 0.05,
+          "high_appeal_share": 0.03
+        },
+        "decision_gap_priority": {
+          "avg_point_risk": 0.3,
+          "avg_soil_risk": 0.18,
+          "avg_water_risk": 0.18,
+          "max_legal_constraint": 0.14,
+          "not_started_decision_share": 0.12,
+          "high_appeal_share": 0.08
+        }
+      },
+      "risk_tier_thresholds": {
+        "low_max": {
+          "value": 35.0,
+          "meaning": "górna granica klasy low w indeksie 0-100",
+          "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+        },
+        "medium_max": {
+          "value": 55.0,
+          "meaning": "górna granica klasy medium w indeksie 0-100",
+          "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+        },
+        "high_max": {
+          "value": 70.0,
+          "meaning": "górna granica klasy high w indeksie 0-100; powyżej jest critical",
+          "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "fabric_workspace_name": "ce-sprzedaz-customer-ops-demo",
+  "lakehouse_name": "lh_sprzedaz_customer_ops",
+  "eventhouse_name": "eh_sprzedaz_customer_ops",
+  "eventstream_custom_endpoint": "https://example.fabric.microsoft.com/eventstream/custom-endpoint",
+  "use_managed_identity": true,
+  "tenant_id": "00000000-0000-0000-0000-000000000000",
+  "notes": "Przykład bez poświadczeń. Nie wpisuj sekretów do repozytorium.",
+  "prevention_model_assumptions": {
+    "status": "założenie modelowe, niepotwierdzone danymi; do kalibracji w pilotażu",
+    "sensitivity_effectiveness_levels": [
+      0.2,
+      0.4,
+      0.6
+    ],
+    "base_effectiveness_for_operational_queue": {
+      "value": 0.4,
+      "meaning": "wariant środkowy analizy wrażliwości dla kontaktów bezpośrednio możliwych do ograniczenia"
+    },
+    "handle_time_capture_rate": {
+      "value": 0.84,
+      "meaning": "część czasu obsługi, którą uznajemy za możliwą do uniknięcia, jeśli kontakt nie wystąpi"
+    },
+    "repeat_avoidance_rate": {
+      "value": 0.55,
+      "meaning": "część powtórek, która może zniknąć, jeśli pierwszy kontakt nie wystąpi lub sprawa zostanie wyjaśniona proaktywnie"
+    },
+    "debt_collection_contact_prevention_effectiveness": {
+      "value": 0.1,
+      "meaning": "osobny niski wariant dla windykacji; windykacja jest wyłączona z głównej puli kontaktów do uniknięcia"
+    }
+  }
+}

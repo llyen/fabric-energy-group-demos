@@ -1,0 +1,15 @@
+// Przykład polityki aktualizacji: wysokoprawdopodobne wykrycia do tabeli alertowej.
+.create-merge table HighConfidenceDetection (
+  event_timestamp_utc:datetime, section_id:string, line_no:int, km_position:real,
+  defect_class:string, confidence:real, acquisition_condition:string, human_verified:int, frame_id:string
+)
+
+.alter table HighConfidenceDetection policy update @'[
+  {
+    "IsEnabled": true,
+    "Source": "AiVisionDetection",
+    "Query": "AiVisionDetection | where confidence >= 0.60 | project event_timestamp_utc, section_id, line_no, km_position, defect_class, confidence, acquisition_condition, human_verified, frame_id",
+    "IsTransactional": false,
+    "PropagateIngestionProperties": true
+  }
+]'@

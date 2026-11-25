@@ -1,0 +1,30 @@
+// Completeness by station for Real-Time Dashboard
+MeterReading
+| where event_timestamp_utc between (_startTime .. _endTime)
+| summarize expected=count(), missing=countif(quality_flag == "missing"), late=countif(quality_flag == "late") by station_id, bin(event_timestamp_utc, 1h)
+| extend completeness_pct = 100.0 * (expected - missing) / expected,
+         ontime_pct = 100.0 * (expected - missing - late) / expected
+| order by event_timestamp_utc asc
+
+// Voltage exceedances, demo threshold 230V +/-10%
+MeterReading
+| where event_timestamp_utc between (_startTime .. _endTime)
+| where quality_flag !in ("missing", "suspect")
+| extend voltage_status = case(voltage_v > 253, "overvoltage", voltage_v < 207, "undervoltage", "normal")
+| where voltage_status != "normal"
+| summarize meter_intervals=count(), meters=dcount(meter_id) by station_id, voltage_status, bin(event_timestamp_utc, 1h)
+| order by meter_intervals desc
+
+// Last-gasp outage scope
+MeterEvent
+| where event_timestamp_utc between (_startTime .. _endTime)
+| where event_type == "last_gasp"
+| summarize last_gasp_events=count(), meters=dcount(meter_id), phases=make_set(phase) by station_id, bin(event_timestamp_utc, 15m)
+| order by last_gasp_events desc
+
+// Potential PV reverse-flow proxy from sample stream
+MeterReading
+| where event_timestamp_utc between (_startTime .. _endTime)
+| summarize net_energy_kwh=sum(net_energy_kwh), meters=dcount(meter_id) by station_id, bin(event_timestamp_utc, 15m)
+| where net_energy_kwh < 0
+| order by net_energy_kwh asc

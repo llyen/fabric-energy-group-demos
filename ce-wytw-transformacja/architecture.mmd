@@ -1,0 +1,36 @@
+flowchart LR
+  subgraph Sources[Źródła syntetyczne]
+    EAM[SAP PM / EAM]
+    EHS[EHS / środowisko]
+    DOC[Dokumentacja techniczna i decyzje]
+    HR[HR / plan transformacji]
+  end
+
+  subgraph Fabric[Microsoft Fabric]
+    LH[(Lakehouse\nlh_wytwarzanie_transformacja)]
+    NB[Notebooks\nPython/PySpark]
+    EH[(Eventhouse\neh_wytwarzanie_monitoring)]
+    KQL[KQL queries]
+    SM[Semantic model]
+    PBI[Power BI report]
+    ACT[Data Activator]
+    APP[Fabric App\nwrite-back]
+    AGENT[Data Agent]
+  end
+
+  EAM --> LH
+  EHS --> LH
+  EHS --> EH
+  DOC --> LH
+  HR --> LH
+  EH --> KQL
+  KQL --> ACT
+  LH --> NB
+  NB --> LH
+  LH --> SM
+  SM --> PBI
+  SM --> AGENT
+  PBI --> APP
+  APP --> LH
+  ACT --> APP
+  AGENT --> APP

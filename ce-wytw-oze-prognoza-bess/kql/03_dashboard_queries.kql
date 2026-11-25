@@ -1,0 +1,13 @@
+// Kafle Real-Time Dashboard
+CurrentTelemetry()
+| summarize actual_mw=sum(active_power_mw), available_mw=sum(available_power_mw), limited_assets=countif(status_code == "limited")
+
+MarketPriceRaw
+| where market in ("RDN", "RDB")
+| summarize arg_max(event_timestamp_utc, price_pln_per_mwh) by market
+
+CurrentStorage()
+| summarize stored_mwh=sum(stored_energy_mwh), net_mw=sum(net_power_mw), pumping_mw=sum(pumping_power_mw), generating_mw=sum(generating_power_mw) by storage_type
+
+NegativePriceCurtailmentWindow()
+| summarize intervals=count(), lost_mw_avg=avg(lost_power_mw), min_price=min(price_pln_per_mwh)

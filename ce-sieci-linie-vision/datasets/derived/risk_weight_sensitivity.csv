@@ -1,0 +1,5 @@
+profile,top_section_overlap_with_default,top_section_overlap_pct,changed_vs_age_sections,avoidable_impact_kcm,avoidable_impact_improvement_vs_age_kcm,condition_component,customer_component,strategic_component,ai_component
+default,18,100.0,12,2654,1203,0.42,0.24,0.2,0.14
+customer_heavy,17,94.4,12,2654,1203,0.34,0.34,0.2,0.12
+asset_condition_heavy,16,88.9,13,2654,1203,0.55,0.18,0.17,0.1
+ai_signal_heavy,14,77.8,12,3709,2258,0.36,0.22,0.18,0.24

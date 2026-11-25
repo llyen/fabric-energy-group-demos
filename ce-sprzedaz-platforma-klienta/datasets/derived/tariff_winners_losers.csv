@@ -1,0 +1,2 @@
+customers_count,dynamic_winners_count,dynamic_losers_count,dynamic_winners_pct,dynamic_losers_pct,avg_dynamic_vs_flat_pln_day,avg_dynamic_vs_flat_energy_component_pln_day,p10_dynamic_vs_flat_pln_day,p90_dynamic_vs_flat_pln_day,min_rdn_price_pln_mwh,max_rdn_price_pln_mwh
+36000,27452,8135,76.26,22.6,-0.58,-0.58,-1.67,0.18,-227.47,1200.05

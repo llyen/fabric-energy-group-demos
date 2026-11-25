@@ -1,0 +1,55 @@
+{
+  "assumptions": {
+    "sensitivity_effectiveness_levels": [
+      0.2,
+      0.4,
+      0.6
+    ],
+    "base_effectiveness_for_operational_queue": 0.4,
+    "handle_time_capture_rate": 0.84,
+    "repeat_avoidance_rate": 0.55,
+    "debt_collection_contact_prevention_effectiveness": 0.1
+  },
+  "reason_assumptions": {
+    "annual_settlement": {
+      "eligible_for_contact_prevention": true,
+      "status": "założenie modelowe, niepotwierdzone danymi",
+      "justification_pl": "Komunikat i korekta prognozy przed/po rozliczeniu mogą ograniczyć część telefonów wyjaśniających."
+    },
+    "tariff_change": {
+      "eligible_for_contact_prevention": true,
+      "status": "założenie modelowe, niepotwierdzone danymi",
+      "justification_pl": "Proaktywne wyjaśnienie zmiany taryfy może ograniczyć kontakty informacyjne; G12/G13 nie są taryfą dynamiczną."
+    },
+    "forecast_vs_actual_invoice": {
+      "eligible_for_contact_prevention": true,
+      "status": "założenie modelowe, niepotwierdzone danymi",
+      "justification_pl": "Duża różnica prognoza/rzeczywiste zużycie jest widoczna w fakturze i może uruchomić korektę przed telefonem."
+    },
+    "prosumer_net_billing": {
+      "eligible_for_contact_prevention": true,
+      "status": "założenie modelowe, niepotwierdzone danymi",
+      "justification_pl": "Net-billing jest częstym źródłem niejasności; można wysłać wyjaśnienie depozytu i salda przed kontaktem."
+    },
+    "meter_reading_access": {
+      "eligible_for_contact_prevention": true,
+      "status": "założenie modelowe, niepotwierdzone danymi",
+      "justification_pl": "Pytania o dostęp do danych pomiarowych/CSIRE można częściowo ograniczyć jasną informacją o upoważnieniu i celu przetwarzania."
+    },
+    "debt_collection": {
+      "eligible_for_contact_prevention": false,
+      "status": "założenie modelowe, niepotwierdzone danymi",
+      "justification_pl": "Windykacja jest wyłączona z głównej puli kontaktów do uniknięcia; komunikacja może najwyżej ograniczać powtórki lub eskalacje, nie sam fakt zaległości."
+    },
+    "outage_osd": {
+      "eligible_for_contact_prevention": false,
+      "status": "wynika z granicy odpowiedzialności sprzedawca/OSD",
+      "justification_pl": "Przerwa w dostawie jest domeną OSD. Sprzedawca może poprawić routing i komunikację, ale nie zapobiega zdarzeniu sieciowemu."
+    },
+    "supplier_switch": {
+      "eligible_for_contact_prevention": false,
+      "status": "założenie modelowe, niepotwierdzone danymi",
+      "justification_pl": "Zmiana sprzedawcy zależy od procesu rynkowego i decyzji klienta; repo nie dowodzi redukcji kontaktu proaktywną komunikacją."
+    }
+  }
+}

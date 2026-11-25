@@ -1,0 +1,4 @@
+parameter,value,description,status
+value_per_kw_event_pln,280,"Syntetyczna wartość brutto 1 kW zweryfikowanej redukcji DSR w jednym zdarzeniu; proxy wartości portfelowej, nie taryfa Contoso Energia.","założenie modelowe, do kalibracji z danymi handlowymi klienta, rozliczeniami POB i historią programu"
+participant_incentive_pln_event,4,"Syntetyczna zachęta przypisana do jednego odbiorcy objętego programem w jednym zdarzeniu DSR; modeluje koszt dostępności/udziału, nie tylko faktyczną reakcję.","założenie modelowe, do kalibracji testami akceptacji oferty i regulaminem programu"
+program_fixed_cost_pln_per_event,65000,"Syntetyczny koszt stały jednego zdarzenia: kampania, operacje, rozliczenia, wsparcie i koszt pracy platformy.","założenie modelowe, do kalibracji z docelowym modelem operacyjnym i zakresem integracji"

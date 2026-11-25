@@ -1,0 +1,9 @@
+contact_reason,eligible_for_contact_prevention,status,justification_pl
+annual_settlement,True,"założenie modelowe, niepotwierdzone danymi",Komunikat i korekta prognozy przed/po rozliczeniu mogą ograniczyć część telefonów wyjaśniających.
+tariff_change,True,"założenie modelowe, niepotwierdzone danymi",Proaktywne wyjaśnienie zmiany taryfy może ograniczyć kontakty informacyjne; G12/G13 nie są taryfą dynamiczną.
+forecast_vs_actual_invoice,True,"założenie modelowe, niepotwierdzone danymi",Duża różnica prognoza/rzeczywiste zużycie jest widoczna w fakturze i może uruchomić korektę przed telefonem.
+prosumer_net_billing,True,"założenie modelowe, niepotwierdzone danymi",Net-billing jest częstym źródłem niejasności; można wysłać wyjaśnienie depozytu i salda przed kontaktem.
+meter_reading_access,True,"założenie modelowe, niepotwierdzone danymi",Pytania o dostęp do danych pomiarowych/CSIRE można częściowo ograniczyć jasną informacją o upoważnieniu i celu przetwarzania.
+debt_collection,False,"założenie modelowe, niepotwierdzone danymi","Windykacja jest wyłączona z głównej puli kontaktów do uniknięcia; komunikacja może najwyżej ograniczać powtórki lub eskalacje, nie sam fakt zaległości."
+outage_osd,False,wynika z granicy odpowiedzialności sprzedawca/OSD,"Przerwa w dostawie jest domeną OSD. Sprzedawca może poprawić routing i komunikację, ale nie zapobiega zdarzeniu sieciowemu."
+supplier_switch,False,"założenie modelowe, niepotwierdzone danymi",Zmiana sprzedawcy zależy od procesu rynkowego i decyzji klienta; repo nie dowodzi redukcji kontaktu proaktywną komunikacją.

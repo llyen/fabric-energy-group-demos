@@ -1,0 +1,8 @@
+metric,value,unit
+high_voltage_threshold_v,253.0,V
+low_voltage_threshold_v,207.0,V
+voltage_exceedance_intervals_total,1626678.0,meter_intervals
+d0_voltage_exceedance_intervals,75124.0,meter_intervals
+distinct_meters_with_d0_exceedance,3672.0,meters
+last_gasp_events,1576.0,meter_events
+customer_voltage_complaints_in_scenario,0.0,complaints

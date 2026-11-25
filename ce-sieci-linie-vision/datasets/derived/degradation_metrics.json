@@ -1,0 +1,6 @@
+{
+  "threshold_degradation_pct": 68.0,
+  "monotonic_violations": 0,
+  "sections_above_threshold": 51,
+  "median_months_to_threshold": 6.2
+}

@@ -1,0 +1,27 @@
+{
+  "unplanned_faults_evaluated": 34,
+  "recommendations": 34,
+  "feasible_recommendations": 18,
+  "affected_customers": 90126,
+  "restored_customers": 38714,
+  "baseline_source": "fault_events.actual duration_min for evaluated unplanned faults, customer-weighted",
+  "switching_time_min": 32.0,
+  "switching_time_assumption_status": "model_assumption_to_calibrate_with_customer_data",
+  "baseline_avg_interruption_min": 115.79355568870248,
+  "proposed_avg_interruption_min": 82.55413532166078,
+  "avg_minutes_saved": 33.2394203670417,
+  "customer_minutes_saved": 2995736.0,
+  "scenario_saidi_reduction_min_per_customer": 10.453657532286712,
+  "sensitivity_switching_time_min": [
+    20.0,
+    32.0,
+    45.0,
+    60.0,
+    90.0
+  ],
+  "sensitivity_min_saidi_reduction": 2.618264805128187,
+  "sensitivity_max_saidi_reduction": 12.0747732689402,
+  "current_constraints_checked": true,
+  "voltage_constraints_checked": true,
+  "dispatcher_approval_required": true
+}

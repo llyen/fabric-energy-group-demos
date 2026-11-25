@@ -1,0 +1,9 @@
+region_code,customers_served,connected_customers,is_balanced
+51,118000,118000,True
+53,96000,96000,True
+55,131000,131000,True
+57,54000,54000,True
+59,77000,77000,True
+61,63000,63000,True
+63,89000,89000,True
+65,42000,42000,True

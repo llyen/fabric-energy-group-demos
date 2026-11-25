@@ -1,0 +1,9 @@
+,annual_settlement,debt_collection,forecast_vs_actual_invoice,meter_reading_access,outage_osd,prosumer_net_billing,supplier_switch,tariff_change
+annual_settlement,51,16,0,0,0,0,0,0
+debt_collection,0,173,0,0,0,0,0,0
+forecast_vs_actual_invoice,0,24,145,0,0,0,0,0
+meter_reading_access,0,4,0,14,0,0,0,0
+outage_osd,0,8,0,0,44,0,0,0
+prosumer_net_billing,0,9,0,0,0,64,0,0
+supplier_switch,0,4,0,0,0,0,21,0
+tariff_change,0,15,0,0,0,0,0,53

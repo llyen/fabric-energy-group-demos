@@ -1,0 +1,31 @@
+{
+  "model": "RandomForestClassifier demonstracyjny, split out_of_time",
+  "split": "out_of_time",
+  "train_until_exclusive": "2025-12-02",
+  "test_from_inclusive": "2026-01-01",
+  "risk_auc_failure_30d": 0.626,
+  "baseline_auc_calendar_cycle": 0.511,
+  "risk_average_precision": 0.185,
+  "precision_at_20_risk": 0.4,
+  "precision_at_20_baseline": 0.25,
+  "feature_rows": 11680,
+  "positive_rows_failure_30d": 1114,
+  "failure_events_total": 36,
+  "failure_events_test": 20,
+  "failure_modes": {
+    "bearing": 5,
+    "gearbox": 5,
+    "generator_bearing": 5,
+    "inverter": 12,
+    "pitch": 4,
+    "runner_bearing": 5
+  },
+  "alert_threshold_train_non_failure_quantile": 0.97,
+  "alert_threshold_train_non_failure": 0.755,
+  "detected_failures_total": 32,
+  "undetected_failures_total": 4,
+  "undetected_failures_pct": 11.1,
+  "lead_time_days_median_detected": 73.5,
+  "lead_time_days_p25_detected": 55.0,
+  "lead_time_days_p75_detected": 82.5
+}

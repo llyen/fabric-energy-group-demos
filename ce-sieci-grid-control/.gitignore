@@ -1,0 +1,9 @@
+.env
+*.secret.json
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+datasets/tmp/
+datasets/derived/dry_run_*.jsonl
+.artifacts/

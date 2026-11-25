@@ -1,0 +1,17 @@
+{
+  "seed": 42,
+  "intervals_15m": 70080,
+  "generation_asset_rows": 700800,
+  "market_price_rows": 210240,
+  "storage_dispatch_rows": 210240,
+  "realtime_telemetry_rows": 3840,
+  "scenario_start_local": "2026-06-16T00:00:00+02:00",
+  "scenario_end_local": "2026-06-20T23:45:00+02:00",
+  "negative_price_intervals_scenario": 76,
+  "curtailed_energy_during_negative_prices_mwh": 693.272,
+  "max_pv_generation_mwh_at_night": 0.0,
+  "esp_pumped_energy_mwh_scenario": 2749.5,
+  "esp_generated_energy_mwh_scenario": 1914.688,
+  "bess_charged_energy_mwh_scenario": 2224.764,
+  "bess_discharged_energy_mwh_scenario": 1755.0
+}

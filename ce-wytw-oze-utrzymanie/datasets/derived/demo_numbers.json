@@ -1,0 +1,26 @@
+{
+  "wow_target_asset": "WTG-W02-03",
+  "wow_lead_time_days_power_curve": 53,
+  "wow_lead_time_days_temperature": 67,
+  "baseline_expected_lost_mwh": 67.7,
+  "optimized_expected_lost_mwh": 57.2,
+  "avoidable_lost_production_mwh": 10.5,
+  "avoidable_lost_production_pct": 15.5,
+  "lost_production_delay_multiplier": 0.42,
+  "lost_production_sensitivity_min_mwh": 7.5,
+  "lost_production_sensitivity_max_mwh": 13.8,
+  "risk_auc_failure_30d": 0.626,
+  "baseline_auc_calendar_cycle": 0.511,
+  "precision_at_20_risk": 0.4,
+  "precision_at_20_baseline": 0.25,
+  "night_pv_generation_mwh": 0.0,
+  "worst_pv_asset_id": "INV-P01-01",
+  "volumes": {
+    "asset_registry.csv": 16,
+    "wind_scada_10min.csv": 630720,
+    "pv_scada_15min.csv": 280320,
+    "hydro_scada_1h.csv": 52560,
+    "esp_scada_1h.csv": 52560,
+    "work_orders.csv": 10
+  }
+}

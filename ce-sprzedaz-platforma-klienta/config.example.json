@@ -1,0 +1,37 @@
+{
+  "fabric": {
+    "workspace_name": "ce-sprzedaz-platforma-klienta-demo",
+    "lakehouse_name": "lh_customer_energy_flex",
+    "eventhouse_name": "eh_customer_flex",
+    "eventstream_endpoint": "https://example.servicebus.windows.net/customer-flex/events",
+    "tenant_id": "00000000-0000-0000-0000-000000000000"
+  },
+  "simulation": {
+    "dry_run": true,
+    "speed": 60,
+    "from": "2026-06-18T00:00:00+02:00",
+    "to": "2026-06-19T23:45:00+02:00"
+  },
+  "privacy": {
+    "minimum_group_size": 100,
+    "allowed_granularity": ["segment", "gmina", "tariff_variant"]
+  },
+  "dsr_economic_assumptions": {
+    "value_per_kw_event_pln": {
+      "value": 280,
+      "description": "Syntetyczna wartość brutto 1 kW zweryfikowanej redukcji DSR w jednym zdarzeniu; proxy wartości portfelowej, nie taryfa Contoso Energia.",
+      "status": "założenie modelowe, do kalibracji z danymi klienta, POB i historią programu"
+    },
+    "participant_incentive_pln_event": {
+      "value": 4,
+      "description": "Syntetyczna zachęta przypisana do jednego odbiorcy objętego programem w jednym zdarzeniu DSR; modeluje koszt dostępności/udziału, nie tylko faktyczną reakcję.",
+      "status": "założenie modelowe, do kalibracji testami akceptacji oferty i regulaminem programu"
+    },
+    "program_fixed_cost_pln_per_event": {
+      "value": 65000,
+      "description": "Syntetyczny koszt stały przypisany do jednego zdarzenia: kampania, operacje, rozliczenia, wsparcie i koszt uruchomienia platformy.",
+      "status": "założenie modelowe, do kalibracji z docelowym modelem operacyjnym i zakresem integracji"
+    },
+    "fixed_cost_sensitivity_pln_event": [40000, 65000, 100000]
+  }
+}

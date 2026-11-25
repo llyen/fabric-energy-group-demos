@@ -1,0 +1,4 @@
+asset_type,actual_generation_mwh,installed_capacity_mw,capacity_factor_pct
+pv,352255.87695,188,10.69
+run_of_river,335648.40122,46,41.65
+wind,1475417.2766,320,26.32

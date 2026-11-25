@@ -1,0 +1,11 @@
+metric,value,unit
+logical_meter_interval_rows,73728000.0,rows
+meter_count,24000.0,meters
+interval_count,3072.0,PT15M
+completeness_pct,99.373,%
+ontime_pct,98.333,%
+trusted_for_analytics_pct,98.123,%
+missing_readings,460917.0,rows
+late_readings,767885.0,rows
+duplicate_readings,153733.0,rows
+backdated_corrections,30000.0,rows

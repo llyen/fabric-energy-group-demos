@@ -1,0 +1,29 @@
+.create-merge table WindScada10m (
+  event_timestamp_utc:datetime, local_timezone:string, settlement_interval:string, asset_id:string, site_id:string,
+  wind_speed_mps:real, ambient_temp_c:real, active_power_mw:real, expected_power_mw:real,
+  available_capacity_mw:real, actual_generation_mwh:real, curtailment_mwh:real, planned_outage:bool,
+  gearbox_oil_temp_c:real, bearing_temp_c:real, vibration_mm_s:real, alarm_code:string,
+  source_system:string, quality_flag:string, ingestion_timestamp:datetime, data_version:string
+)
+
+.create-merge table PvScada15m (
+  event_timestamp_utc:datetime, local_timezone:string, settlement_interval:string, asset_id:string, site_id:string,
+  solar_elevation_deg:real, irradiance_w_m2:real, ambient_temp_c:real, active_power_mw:real,
+  actual_generation_mwh:real, available_capacity_mw:real, curtailment_mwh:real, planned_outage:bool,
+  source_system:string, quality_flag:string, ingestion_timestamp:datetime, data_version:string
+)
+
+.create-merge table HydroScada1h (
+  event_timestamp_utc:datetime, local_timezone:string, settlement_interval:string, asset_id:string, site_id:string,
+  river_flow_m3s:real, active_power_mw:real, actual_generation_mwh:real, available_capacity_mw:real,
+  curtailment_mwh:real, planned_outage:bool, bearing_temp_c:real, vibration_mm_s:real,
+  source_system:string, quality_flag:string, ingestion_timestamp:datetime, data_version:string
+)
+
+.create-merge table EspScada1h (
+  event_timestamp_utc:datetime, local_timezone:string, settlement_interval:string, asset_id:string, site_id:string,
+  mode:string, generating_power_mw:real, pumping_power_mw:real, actual_generation_mwh:real, pumping_energy_mwh:real,
+  stored_energy_mwh:real, upper_reservoir_level_pct:real, round_trip_efficiency:real, start_count_cumulative:long,
+  available_capacity_mw:real, curtailment_mwh:real, planned_outage:bool, bearing_temp_c:real, vibration_mm_s:real,
+  source_system:string, quality_flag:string, ingestion_timestamp:datetime, data_version:string
+)

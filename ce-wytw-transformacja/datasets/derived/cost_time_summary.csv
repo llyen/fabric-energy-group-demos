@@ -1,0 +1,5 @@
+location_id,total_obligation_pln,capex_pln,carrying_cost_pln,max_idle_land_ha,peak_year,location_name,carrying_share_pct
+LOC_ALF,1295599456.02,1196905758.13,98693697.89,742.1,2037,Kompleks Alfa,7.6
+LOC_BET,1467679610.76,1377400830.47,90278780.28999999,530.6,2041,Kompleks Beta,6.2
+LOC_DEL,318557832.82,289183050.08,29374782.740000002,322.7,2045,Kompleks Delta,9.2
+LOC_GAM,750817344.18,700492809.63,50324534.55,403.1,2035,Kompleks Gamma,6.7

@@ -1,0 +1,12 @@
+{
+  "workspace_name": "ce-fabric-demo-sprzedaz",
+  "lakehouse_name": "lh_ce_sprzedaz_popyt_portfel",
+  "warehouse_name": "wh_ce_sprzedaz_popyt_portfel",
+  "semantic_model_name": "sm_ce_sprzedaz_popyt_portfel",
+  "local_timezone": "Europe/Warsaw",
+  "settlement_interval": "PT15M",
+  "data_path": "datasets",
+  "derived_path": "datasets/derived",
+  "use_eventhouse": false,
+  "notes": "Plik wzorcowy bez poświadczeń. Dane są syntetyczne."
+}

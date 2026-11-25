@@ -1,0 +1,29 @@
+# Dane wygenerowane - odtwarzalne z generators/generate_dataset.py
+# Nie trafiaja do repozytorium: ~2,5 GB, pojedyncze pliki do 374 MB
+datasets/*
+**/datasets/*
+**/datasets/tmp/
+
+# Warstwa dowodowa zostaje w repozytorium - to na nia powoluja sie
+# README.md i DEMO_SCRIPT.md kazdego scenariusza
+!**/datasets/derived/
+!**/datasets/derived/**
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Systemowe
+Thumbs.db
+.DS_Store
+~$*.docx
+
+# Konfiguracja lokalna i sekrety
+config.json
+.env
+.env.*
+*.log
+

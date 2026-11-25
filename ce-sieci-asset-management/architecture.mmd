@@ -1,0 +1,28 @@
+flowchart LR
+  subgraph Sources[Systemy źródłowe]
+    EAM[SAP PM / EAM\nprzeglądy, zlecenia, awarie]
+    GIS[GIS sieciowy\naktywa, region, atrybuty]
+    DMS[DMS / ADMS\nprzerwy, liczba odbiorców]
+    DIAG[Diagnostyka\npomiary stanu]
+  end
+  subgraph Fabric[Microsoft Fabric]
+    LH[(Lakehouse\nlh_ce_sieci_asset_management)]
+    NB[Notebooki\nhealth, ML, impact, portfolio]
+    SM[Model semantyczny\nPower BI]
+    DA[Data Agent\nQ&A z ograniczeniami]
+    ACT[Data Activator\nreguły planistyczne]
+    APP[Fabric App\nwrite-back decyzji]
+  end
+  subgraph Outputs[Decyzje]
+    REP[Raport\nplan wg wieku vs ryzyka]
+    AUDIT[Audit trail\nuzasadnienie i data]
+  end
+  EAM --> LH
+  GIS --> LH
+  DMS --> LH
+  DIAG --> LH
+  LH --> NB --> LH
+  LH --> SM --> REP
+  LH --> DA
+  LH --> ACT
+  REP --> APP --> AUDIT --> LH

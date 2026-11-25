@@ -1,0 +1,42 @@
+flowchart LR
+    CRM[Billing / CRM
+umowy, faktury, historia kontaktów]
+    AMI[AMI/LZO + CSIRE/OIRE
+PPE i pomiary 15-min]
+    Channel[Contact Center channels
+telefon, email, chat, app]
+
+    subgraph Fabric[Microsoft Fabric]
+      ES[Eventstream
+contact events]
+      EH[Eventhouse / KQL DB
+real-time contact surge]
+      LH[Lakehouse
+Delta tables]
+      NB[Notebooks
+classification, prediction, segmentation]
+      AIF[AI Functions
+classify, summarize, extract]
+      SM[Semantic model
+DAX measures]
+      PBI[Power BI report]
+      ACT[Activator
+alerts and tasks]
+      AG[Data Agent
+controlled answers]
+      APP[Fabric App
+consultant and manager write-back]
+    end
+
+    CRM --> LH
+    AMI --> LH
+    Channel --> ES --> EH
+    ES --> LH
+    LH --> NB --> LH
+    LH --> AIF --> LH
+    LH --> SM --> PBI
+    EH --> PBI
+    SM --> AG
+    EH --> ACT
+    PBI --> APP --> LH
+    AG --> APP

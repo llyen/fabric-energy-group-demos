@@ -1,0 +1,3 @@
+scenario,total_expected_lost_mwh,max_delay_days,avoided_mwh_vs_baseline
+baseline_calendar,67.72391999999999,2,0.0
+value_aware,57.21888,0,10.505039999999994

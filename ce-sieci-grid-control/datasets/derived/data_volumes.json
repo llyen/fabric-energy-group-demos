@@ -1,0 +1,18 @@
+{
+  "as_of_date": "2026-08-21",
+  "substations": 8,
+  "feeders": 64,
+  "line_sections": 378,
+  "tie_switches": 36,
+  "synthetic_connection_points": 286573,
+  "fault_events": 34,
+  "interruptions": 52,
+  "risk_training_rows": 137472,
+  "weather_minute_rows": 72000,
+  "scada_feeder_telemetry_events": 460800,
+  "recloser_events": 176,
+  "ami_voltage_events": 6270,
+  "scenario_start": "2026-08-16T12:00:00+02:00",
+  "scenario_end": "2026-08-21T11:59:00+02:00",
+  "seed": 42
+}

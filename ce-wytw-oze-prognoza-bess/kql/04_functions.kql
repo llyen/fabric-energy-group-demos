@@ -1,0 +1,13 @@
+.create-or-alter function with (folder="oze") ScenarioNow() {
+    toscalar(OzeTelemetryRaw | summarize max(event_timestamp_utc))
+}
+.create-or-alter function with (folder="oze") StorageAt(ts:datetime) {
+    StorageStateRaw
+    | where event_timestamp_utc <= ts
+    | summarize arg_max(event_timestamp_utc, *) by storage_id
+}
+.create-or-alter function with (folder="oze") PriceSpread(startTime:datetime, endTime:datetime) {
+    MarketPriceRaw
+    | where event_timestamp_utc between (startTime .. endTime) and market == "RDN"
+    | summarize min_price=min(price_pln_per_mwh), max_price=max(price_pln_per_mwh), spread=max(price_pln_per_mwh)-min(price_pln_per_mwh)
+}

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets and local config
+.env
+*.env
+config.json
+
+# Fabric / Power BI local artifacts
+*.pbix
+*.pbit
+*.abf
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

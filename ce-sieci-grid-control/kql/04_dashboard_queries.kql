@@ -1,0 +1,21 @@
+// Kafle stanu
+CurrentCircuitState()
+| summarize circuits=count(), outages=countif(operational_status has "outage"), avg_current_a=avg(current_a)
+
+// Lista wysokiego ryzyka
+RiskForecast()
+| top 20 by risk_score desc
+
+// Zanik w ostatnich 10 minutach
+DetectVoltageLoss(10m)
+| order by last_scada desc
+
+// Pogoda vs awarie w oknie godzinnym
+WeatherMinute
+| summarize wind_gust_ms=max(wind_gust_ms), lightning=sum(lightning_count), storm=max(storm_intensity) by branch_id, bin(event_timestamp_local, 1h)
+| join kind=leftouter (
+  ScadaFeederTelemetry
+  | where operational_status == "outage"
+  | summarize outage_minutes=count() by branch_id, bin(event_timestamp_local, 1h)
+) on branch_id, event_timestamp_local
+| order by event_timestamp_local asc

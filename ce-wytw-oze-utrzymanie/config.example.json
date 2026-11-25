@@ -1,0 +1,63 @@
+{
+  "fabric": {
+    "workspace_name": "ce-wytw-oze-utrzymanie-demo",
+    "lakehouse_name": "lh_oze_maintenance",
+    "eventhouse_name": "eh_oze_telemetry",
+    "eventstream_name": "es_oze_scada"
+  },
+  "eventhub": {
+    "connection_string_env": "EVENTHUB_CONNECTION_STR",
+    "eventhub_name_env": "EVENTHUB_NAME"
+  },
+  "simulation": {
+    "default_stream": "wind",
+    "reference_window_from": "2026-06-17T00:00:00+02:00",
+    "reference_window_to": "2026-09-22T23:50:00+02:00"
+  },
+  "model_assumptions": {
+    "lost_production_delay_multiplier": {
+      "value": 0.42,
+      "meaning": "Udział 30-dniowej oczekiwanej produkcji narażony przez opóźnienie pracy serwisowej po uwzględnieniu ryzyka awarii.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    },
+    "residual_risk_multiplier": {
+      "value": 0.08,
+      "meaning": "Minimalna część ryzyka pozostająca nawet po wcześniejszym wykonaniu pracy; odzwierciedla, że inspekcja nie usuwa całej niepewności.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    },
+    "delay_normalization_days": {
+      "value": 12,
+      "meaning": "Liczba dni opóźnienia, po której komponent opóźnienia osiąga pełną wagę dla aktywa o risk_score=1.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    },
+    "optimized_plan_early_start_days_before_d0": {
+      "value": 21,
+      "meaning": "Najwcześniejsza data, od której wariant value_aware może przesuwać prace przed zdarzeniem D0.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    },
+    "capacity_factor_assumptions": {
+      "wind": { "value": 0.36, "meaning": "Wrześniowy współczynnik wykorzystania mocy dla lądowego wiatru w demo.", "status": "założenie modelowe, do kalibracji z ekspertami klienta" },
+      "pv": { "value": 0.13, "meaning": "Wrześniowy współczynnik wykorzystania mocy PV; profil PV nadal wynika z pozycji Słońca, a nocą produkcja wynosi zero.", "status": "założenie modelowe, do kalibracji z ekspertami klienta" },
+      "hydro_run_of_river": { "value": 0.43, "meaning": "Współczynnik wykorzystania mocy dla elektrowni przepływowych zależnych od przepływu hydrologicznego.", "status": "założenie modelowe, do kalibracji z ekspertami klienta" },
+      "esp": { "value": 0.11, "meaning": "Współczynnik generacji netto dla ESP pracującej interwencyjnie; nie znosi założenia o stratnym cyklu 0,76.", "status": "założenie modelowe, do kalibracji z ekspertami klienta" }
+    },
+    "baseline_operating_capacity_factor": {
+      "wind": { "value": 0.34, "meaning": "Ekspozycja godzinowa baseline'u kalendarzowego dla wiatru, liczona jako czas od ostatniego serwisu razy typowy udział godzin pracy.", "status": "założenie modelowe, do kalibracji z ekspertami klienta" },
+      "pv": { "value": 0.12, "meaning": "Ekspozycja godzinowa baseline'u kalendarzowego dla PV; nie zastępuje profilu słonecznego w generatorze.", "status": "założenie modelowe, do kalibracji z ekspertami klienta" },
+      "hydro_run_of_river": { "value": 0.42, "meaning": "Ekspozycja godzinowa baseline'u kalendarzowego dla hydro przepływowego.", "status": "założenie modelowe, do kalibracji z ekspertami klienta" },
+      "esp": { "value": 0.10, "meaning": "Ekspozycja godzinowa baseline'u kalendarzowego dla ESP pracującej interwencyjnie.", "status": "założenie modelowe, do kalibracji z ekspertami klienta" }
+    },
+    "baseline_service_cycle_days": {
+      "wind": { "value": 180, "meaning": "Syntetyczny cykl przeglądu użyty przez baseline kalendarzowy dla turbin.", "status": "założenie modelowe, do kalibracji z ekspertami klienta" },
+      "pv": { "value": 210, "meaning": "Syntetyczny cykl przeglądu użyty przez baseline kalendarzowy dla PV.", "status": "założenie modelowe, do kalibracji z ekspertami klienta" },
+      "hydro_run_of_river": { "value": 240, "meaning": "Syntetyczny cykl przeglądu użyty przez baseline kalendarzowy dla hydro.", "status": "założenie modelowe, do kalibracji z ekspertami klienta" },
+      "esp": { "value": 240, "meaning": "Syntetyczny cykl przeglądu użyty przez baseline kalendarzowy dla ESP.", "status": "założenie modelowe, do kalibracji z ekspertami klienta" }
+    },
+    "risk_alert_threshold_train_non_failure_quantile": {
+      "value": 0.97,
+      "meaning": "Próg alertu do rozkładu lead time: percentyl score'u na wierszach treningowych bez awarii w oknie 30 dni.",
+      "status": "wynika z danych treningowych po wyborze jawnego percentyla; percentyl do kalibracji z ekspertami klienta"
+    },
+    "lost_production_delay_multiplier_sensitivity": [0.30, 0.42, 0.55]
+  }
+}

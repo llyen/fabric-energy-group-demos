@@ -1,0 +1,21 @@
+{
+  "model": "LogisticRegression(class_weight=balanced)",
+  "evaluation": "time_split_holdout",
+  "train_rows": 99008,
+  "test_rows": 38464,
+  "positive_rate_test": 0.010555324459234608,
+  "roc_auc": 0.7945888010702875,
+  "average_precision": 0.07639713176320047,
+  "precision_top10pct": 0.05250844814140889,
+  "recall_top10pct": 0.4975369458128079,
+  "f1_top10pct": 0.09499177051493064,
+  "baseline_roc_auc": 0.5337226406053296,
+  "baseline_average_precision": 0.012255874531210454,
+  "baseline_precision_top10pct": 0.014559068219633943,
+  "baseline_recall_top10pct": 0.1724137931034483,
+  "risk_threshold_top10pct": 0.6709577704503497,
+  "predictable_unplanned_faults": 29,
+  "unplanned_faults": 34,
+  "predictable_share_pct": 85.29411764705883,
+  "median_lead_hours": 11.009321571388888
+}

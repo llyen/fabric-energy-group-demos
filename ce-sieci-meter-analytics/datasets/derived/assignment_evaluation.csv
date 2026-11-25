@@ -1,0 +1,9 @@
+metric,model,value,unit
+control_set_meters,control,2400.0,meters
+station_assignment_accuracy_pct,registry_baseline,89.54,%
+phase_assignment_accuracy_pct,registry_baseline,84.71,%
+station_phase_pair_accuracy_pct,registry_baseline,75.71,%
+station_assignment_accuracy_pct,voltage_correlation,98.46,%
+phase_assignment_accuracy_pct,voltage_correlation,97.79,%
+station_phase_pair_accuracy_pct,voltage_correlation,96.54,%
+pair_accuracy_lift_pp,voltage_correlation_vs_registry,20.83,pp

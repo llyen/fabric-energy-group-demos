@@ -1,0 +1,17 @@
+scenario,location_id,environmental_risk_index,risk_tier,risk_rank,base_rank,rank_change
+base,LOC_ALF,68.5,high,1,1,0
+base,LOC_BET,64.0,high,4,4,0
+base,LOC_DEL,68.4,high,2,2,0
+base,LOC_GAM,67.6,high,3,3,0
+monitoring_priority,LOC_ALF,74.6,critical,1,1,0
+monitoring_priority,LOC_BET,69.5,high,4,4,0
+monitoring_priority,LOC_DEL,74.5,critical,2,2,0
+monitoring_priority,LOC_GAM,74.3,critical,3,3,0
+geo_hydro_priority,LOC_ALF,65.2,high,1,1,0
+geo_hydro_priority,LOC_BET,61.8,high,4,4,0
+geo_hydro_priority,LOC_DEL,64.7,high,2,2,0
+geo_hydro_priority,LOC_GAM,63.0,high,3,3,0
+decision_gap_priority,LOC_ALF,65.1,high,2,1,1
+decision_gap_priority,LOC_BET,60.0,high,4,4,0
+decision_gap_priority,LOC_DEL,65.2,high,1,2,-1
+decision_gap_priority,LOC_GAM,64.9,high,3,3,0

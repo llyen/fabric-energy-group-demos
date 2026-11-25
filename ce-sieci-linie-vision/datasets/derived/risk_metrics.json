@@ -1,0 +1,20 @@
+{
+  "section_count": 253,
+  "budget_sections": 18,
+  "priority_changed_sections": 12,
+  "priority_changed_share_pct": 66.7,
+  "ai_detection_confidence_threshold": 0.6,
+  "preventable_outage_capture_rate": 0.7,
+  "risk_avoidable_impact_kcm": 2654,
+  "age_avoidable_impact_kcm": 1451,
+  "avoidable_impact_improvement_kcm": 1203,
+  "avoidable_impact_improvement_pct": 82.9,
+  "ai_high_conf_detections": 53,
+  "ai_high_conf_outside_age_plan": 44,
+  "ai_high_conf_outside_age_plan_pct": 83.0,
+  "risk_precision_at_budget": 0.556,
+  "risk_recall_at_budget": 0.079,
+  "age_precision_at_budget": 0.556,
+  "age_recall_at_budget": 0.079,
+  "risk_model_auc": 0.619
+}

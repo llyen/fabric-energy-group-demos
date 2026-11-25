@@ -1,0 +1,2 @@
+model,coef_load_pct,coef_ambient_temp_c,train_mae_c,temp_alert_threshold_z,first_temp_alert_date,temp_lead_time_days
+HuberRegressor gearbox_temp ~ load_pct + ambient_temp_c,34.432,1.008,2.088,3.0,2026-07-10T00:00:00+02:00,67

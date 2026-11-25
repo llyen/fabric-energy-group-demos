@@ -1,0 +1,5 @@
+location_id,first_generation_end_year,last_generation_end_year,end_supply_year,site_closure_year,reclamation_complete_year,years_from_first_unit_end_to_reclamation,years_from_last_unit_end_to_reclamation,location_name
+LOC_ALF,2031,2035,2035.0,2038.0,2045,14,10,Kompleks Alfa
+LOC_BET,2037,2040,2040.0,2043.0,2045,8,5,Kompleks Beta
+LOC_DEL,2041,2044,,,2045,4,1,Kompleks Delta
+LOC_GAM,2029,2034,,,2045,16,11,Kompleks Gamma

@@ -1,0 +1,7 @@
+{
+  "eventhub_connection_str": "Endpoint=sb://<namespace>.servicebus.windows.net/;SharedAccessKeyName=<key-name>;SharedAccessKey=<key>",
+  "eventhub_name": "ce-cieplo-smart-heat-telemetry",
+  "fabric_workspace": "<workspace-name>",
+  "lakehouse": "lh_smart_heat",
+  "eventhouse": "eh_smart_heat"
+}

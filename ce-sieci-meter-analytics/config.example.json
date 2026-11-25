@@ -1,0 +1,9 @@
+{
+  "fabric_workspace": "ce-sieci-meter-analytics-demo",
+  "lakehouse_name": "lh_meter_analytics",
+  "eventhouse_database": "MeterTelemetry",
+  "eventstream_endpoint": "https://example.fabric.microsoft.com/eventstream/custom-endpoint",
+  "send_batch_size": 500,
+  "dry_run_default": true,
+  "notes": "No credentials in this file. Use environment variables or Key Vault for production secrets."
+}

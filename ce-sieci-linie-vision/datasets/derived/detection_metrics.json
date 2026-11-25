@@ -1,0 +1,17 @@
+{
+  "best_threshold": 0.3,
+  "best_precision": 0.875,
+  "best_recall": 0.581,
+  "best_f1": 0.698,
+  "threshold_060_precision": 0.925,
+  "threshold_060_recall": 0.214,
+  "threshold_060_f1": 0.348,
+  "threshold_060_false_positive_count": 4,
+  "threshold_060_false_negative_count": 180,
+  "threshold_060_followup_team_hours_from_fp": 8.0,
+  "threshold_060_missed_defect_weight": 180.0,
+  "worst_condition_at_060_by_recall": "occlusion",
+  "worst_condition_at_060_recall": 0.0,
+  "best_condition_at_060_by_recall": "shadow",
+  "best_condition_at_060_recall": 0.4
+}

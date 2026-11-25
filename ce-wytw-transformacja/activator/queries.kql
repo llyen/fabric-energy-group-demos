@@ -1,0 +1,7 @@
+// Source queries for Data Activator.
+
+let RepeatedEnvironmentalExceedance = EnvironmentalMonitoring
+| where event_timestamp_utc > ago(90d) and exceedance_flag == 1
+| summarize exceedances_90d=count(), max_ratio=max(value / threshold), last_event=max(event_timestamp_utc) by location_id, medium
+| where exceedances_90d >= 3 or max_ratio >= 1.25;
+RepeatedEnvironmentalExceedance

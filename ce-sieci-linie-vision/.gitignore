@@ -1,0 +1,8 @@
+.env
+*.key
+*.pem
+config.json
+model_assumptions.json
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store

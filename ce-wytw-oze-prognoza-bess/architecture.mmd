@@ -1,0 +1,22 @@
+flowchart LR
+  SCADA[SCADA turbin IEC 61400-25
+PV telemetry
+ESP/BESS state] --> ES[Fabric Eventstream]
+  MARKET[Dane TGE/PSE
+RDN/RDB/imbalance] --> ES
+  ES --> EH[Eventhouse / KQL DB]
+  EH --> RTD[Real-Time Dashboard]
+  EH --> ACT[Data Activator]
+  LH[Lakehouse / Delta
+24 months history] --> NB[Notebooks
+forecast + optimization]
+  EH --> LH
+  NB --> DER[Derived tables
+forecast, imbalance, storage plan]
+  DER --> SEM[Semantic model]
+  LH --> SEM
+  SEM --> PBI[Power BI report]
+  SEM --> AGENT[Data Agent]
+  APP[Fabric App
+accept dispatch plan] --> LH
+  ACT --> TEAMS[Teams/e-mail alert]

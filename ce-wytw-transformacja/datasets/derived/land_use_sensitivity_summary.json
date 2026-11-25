@@ -1,0 +1,50 @@
+[
+  {
+    "scenario": "base",
+    "stable_area_choices": 32,
+    "total_areas": 32,
+    "stable_area_choices_pct": 100.0,
+    "pv_bess_capacity_mwe": 137,
+    "pv_bess_storage_mwh": 324,
+    "pv_bess_area_ha": 213.6,
+    "nature_area_ha": 1813.9,
+    "water_area_ha": 294.0,
+    "industrial_area_ha": 0.0
+  },
+  {
+    "scenario": "environment_priority",
+    "stable_area_choices": 30,
+    "total_areas": 32,
+    "stable_area_choices_pct": 93.8,
+    "pv_bess_capacity_mwe": 246,
+    "pv_bess_storage_mwh": 557,
+    "pv_bess_area_ha": 380.6,
+    "nature_area_ha": 1646.9,
+    "water_area_ha": 294.0,
+    "industrial_area_ha": 0.0
+  },
+  {
+    "scenario": "readiness_priority",
+    "stable_area_choices": 27,
+    "total_areas": 32,
+    "stable_area_choices_pct": 84.4,
+    "pv_bess_capacity_mwe": 292,
+    "pv_bess_storage_mwh": 681,
+    "pv_bess_area_ha": 447.2,
+    "nature_area_ha": 1389.5,
+    "water_area_ha": 294.0,
+    "industrial_area_ha": 190.8
+  },
+  {
+    "scenario": "grid_priority",
+    "stable_area_choices": 32,
+    "total_areas": 32,
+    "stable_area_choices_pct": 100.0,
+    "pv_bess_capacity_mwe": 137,
+    "pv_bess_storage_mwh": 324,
+    "pv_bess_area_ha": 213.6,
+    "nature_area_ha": 1813.9,
+    "water_area_ha": 294.0,
+    "industrial_area_ha": 0.0
+  }
+]

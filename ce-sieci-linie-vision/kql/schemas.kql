@@ -1,0 +1,28 @@
+.create-merge table SubstationTelemetry (
+  event_timestamp_utc:datetime, local_timezone:string, settlement_interval:string,
+  source_system:string, quality_flag:string, ingestion_timestamp:datetime, data_version:string,
+  substation_id:string, load_mw:real, current_a:real, available_capacity_mw:real,
+  installed_capacity_mw:real, ambient_temperature_c:real, power_quality_index:real
+)
+
+.create-merge table AiVisionDetection (
+  event_timestamp_utc:datetime, local_timezone:string, settlement_interval:string,
+  source_system:string, quality_flag:string, ingestion_timestamp:datetime, data_version:string,
+  candidate_id:string, inspection_id:string, section_id:string, line_no:int,
+  km_position:real, frame_id:string, defect_class:string, confidence:real,
+  acquisition_condition:string, condition_penalty:real,
+  human_verified:int, field_confirmation_status:string, model_version:string, image_kind:string
+)
+
+.create-merge table ProtectionEvent (
+  event_timestamp_utc:datetime, local_timezone:string, settlement_interval:string,
+  source_system:string, quality_flag:string, ingestion_timestamp:datetime, data_version:string,
+  event_id:string, substation_id:string, event_type:string, severity:string, duration_ms:int
+)
+
+.create-merge table SectionRiskScore (
+  section_id:string, line_no:int, km_start:real, km_end:real, age_years:int,
+  current_degradation_pct:real, customers_hundreds:int, strategic_rank:int,
+  ai_detections:real, risk_score:real, risk_priority_rank:int, age_priority_rank:int,
+  selected_by_risk:int, selected_by_age:int, priority_changed:bool
+)

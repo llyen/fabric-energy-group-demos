@@ -1,0 +1,39 @@
+{
+  "fabric": {
+    "workspace_name": "ce-sieci-linie-vision-demo",
+    "eventstream_endpoint": "https://example.servicebus.windows.net/ce-linie-vision/events",
+    "eventhouse_database": "LinieVisionKql",
+    "lakehouse_name": "lh_linie_vision"
+  },
+  "realtime": {
+    "default_speed": 30,
+    "dry_run": true
+  },
+  "model_assumptions": {
+    "ai_detection_confidence_threshold": {
+      "value": 0.60,
+      "meaning": "Minimalny confidence dla wysokiej pewności AI vision.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    },
+    "risk_score_weights": {
+      "value": {"condition_component": 0.42, "customer_component": 0.24, "strategic_component": 0.20, "ai_component": 0.14},
+      "meaning": "Wagi domenowego składnika risk_score; suma wag = 1.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    },
+    "risk_score_blend": {
+      "value": {"domain_score": 0.65, "ml_failure_probability": 0.35},
+      "meaning": "Połączenie jawnego scoringu domenowego z demonstracyjnym prawdopodobieństwem awarii ML.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    },
+    "preventable_outage_capture_rate": {
+      "value": 0.70,
+      "meaning": "Udział skutków awarii przewodów i osprzętu możliwych do uniknięcia po wykonaniu pracy przed awarią.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    },
+    "sensitivity_preventable_outage_capture_rates": {
+      "value": [0.50, 0.60, 0.70, 0.80],
+      "meaning": "Zakres analizy wrażliwości dla unikniętych przerw u odbiorców.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    }
+  }
+}

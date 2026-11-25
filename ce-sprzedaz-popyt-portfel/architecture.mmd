@@ -1,0 +1,36 @@
+flowchart LR
+    subgraph Sources[Źródła syntetyczne]
+        AMI[Aggregated AMI / billing profiles]
+        Weather[Weather forecast day-ahead]
+        Market[RDN + imbalance prices]
+        Calendar[Calendar / holidays / DST]
+    end
+
+    subgraph OneLake[Microsoft Fabric / OneLake]
+        LH[Lakehouse Delta\nraw + curated]
+        WH[Data Warehouse\nreporting marts]
+        NB[Notebooks\nfeatures, ML, quantiles, costs]
+        Registry[Model registry\nversion + metrics]
+    end
+
+    subgraph Decision[Warstwa decyzyjna]
+        PBI[Power BI semantic model + report]
+        App[Fabric App\nforecast approval + expert correction]
+        Activator[Data Activator\nalert: deviation vs position]
+        Agent[Data Agent\nquestions on risk and position]
+    end
+
+    AMI --> LH
+    Weather --> LH
+    Market --> LH
+    Calendar --> LH
+    LH --> NB
+    NB --> Registry
+    NB --> WH
+    WH --> PBI
+    Registry --> PBI
+    PBI --> App
+    App --> LH
+    WH --> Activator
+    WH --> Agent
+    Registry --> Agent

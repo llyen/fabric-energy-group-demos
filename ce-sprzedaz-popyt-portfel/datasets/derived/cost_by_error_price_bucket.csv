@@ -1,0 +1,5 @@
+error_cost_quartile,rows,abs_error_mwh,bias_mwh,avg_error_price_weight_pln_mwh,model_imbalance_cost_pln
+Q1_low,3335,12361.03,135.75,73.31,914810.25
+Q2,3336,13150.9,5951.49,93.76,1233299.26
+Q3,3334,14119.83,6941.95,117.66,1660275.47
+Q4_high,3335,18513.44,7336.34,178.96,4168463.82

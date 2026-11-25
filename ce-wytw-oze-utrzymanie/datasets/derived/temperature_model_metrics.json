@@ -1,0 +1,9 @@
+{
+  "model": "HuberRegressor gearbox_temp ~ load_pct + ambient_temp_c",
+  "coef_load_pct": 34.432,
+  "coef_ambient_temp_c": 1.008,
+  "train_mae_c": 2.088,
+  "temp_alert_threshold_z": 3.0,
+  "first_temp_alert_date": "2026-07-10T00:00:00+02:00",
+  "temp_lead_time_days": 67
+}

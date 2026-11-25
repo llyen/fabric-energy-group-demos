@@ -1,0 +1,4 @@
+check_name,status,detail
+weather_feature_source,pass,"Cechy modelu używają weather_forecast_dayahead_15min, nie weather_actual_15min."
+out_of_time_split,pass,Test zaczyna się po okresie uczącym: 2026-08-15 UTC.
+dst_days,pass,Kalendarz zawiera doby 92 i 100 interwałów; event_timestamp_utc jest kluczem czasu.

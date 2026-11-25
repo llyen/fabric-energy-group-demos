@@ -1,0 +1,29 @@
+flowchart LR
+  subgraph OT[Strefa OT / systemy technologiczne]
+    SCADA[SCADA / Historian]
+    DCS[DCS źródeł]
+    MTR[Ciepłomierze i węzły]
+  end
+  subgraph EXT[Źródła zewnętrzne]
+    METEO[Meteo]
+    MARKET[Ceny RDN/RDB]
+  end
+  SCADA --> ES[Fabric Eventstream]
+  MTR --> ES
+  METEO --> ES
+  MARKET --> ES
+  ES --> EH[Eventhouse / KQL]
+  ES --> LH[Lakehouse]
+  REF[Rejestry: źródła, sieć, magazyn, odbiorcy] --> LH
+  EH --> RTD[Real-Time Dashboard]
+  LH --> NB[Notebooks: forecast, losses, optimization]
+  NB --> DER[Derived tables]
+  DER --> SM[Semantic model]
+  SM --> PBI[Power BI report]
+  EH --> ACT[Data Activator]
+  DER --> ACT
+  DER --> APP[Fabric App write-back]
+  APP --> AUDIT[Audit decisions table]
+  DER --> AGENT[Data Agent]
+  EH --> AGENT
+  APP -. rekomendacja zaakceptowana przez człowieka .-> DCS

@@ -1,0 +1,21 @@
+// Eventhouse schema for customer-side flexibility demo.
+.create-merge table PortfolioAmi15m (
+  event_timestamp_utc: datetime,
+  local_timestamp: datetime,
+  gross_load_mwh: real,
+  pv_generation_mwh: real,
+  customers_count: long,
+  settlement_interval: string,
+  source_system: string,
+  quality_flag: string,
+  data_version: string
+)
+
+.create-merge table DsrEventTelemetry (
+  event_timestamp_utc: datetime,
+  event_id: string,
+  response_rate: real,
+  baseline_mw: real,
+  after_response_mw: real,
+  delta_mw: real
+)

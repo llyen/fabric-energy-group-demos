@@ -1,0 +1,9 @@
+contact_reason,contacts,seller_role,osd_role
+annual_settlement,224,seller_lead,not_owner
+debt_collection,576,seller_lead,not_owner
+forecast_vs_actual_invoice,564,seller_lead,not_owner
+meter_reading_access,61,seller_lead,not_owner
+outage_osd,175,seller_front_door_only,distribution_owner
+prosumer_net_billing,242,seller_lead,not_owner
+supplier_switch,83,seller_lead,not_owner
+tariff_change,225,seller_lead,not_owner

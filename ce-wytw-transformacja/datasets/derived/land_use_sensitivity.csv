@@ -1,0 +1,5 @@
+scenario,stable_area_choices,total_areas,stable_area_choices_pct,pv_bess_capacity_mwe,pv_bess_storage_mwh,pv_bess_area_ha,nature_area_ha,water_area_ha,industrial_area_ha
+base,32,32,100.0,137,324,213.6,1813.9,294.0,0.0
+environment_priority,30,32,93.8,246,557,380.6,1646.9,294.0,0.0
+readiness_priority,27,32,84.4,292,681,447.2,1389.5,294.0,190.8
+grid_priority,32,32,100.0,137,324,213.6,1813.9,294.0,0.0

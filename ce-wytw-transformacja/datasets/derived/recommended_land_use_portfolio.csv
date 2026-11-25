@@ -1,0 +1,9 @@
+location_id,land_use_code,land_use_name,areas,area_ha,potential_capacity_mwe,potential_bess_mwh,avg_score
+LOC_ALF,NATURE,funkcja przyrodnicza,10,632.7,0,0,67.9
+LOC_ALF,PV_BESS,PV/BESS na terenach poprzemysłowych,1,87.2,48,125,63.8
+LOC_ALF,WATER,zbiornik wodny,3,159.2,0,0,61.8
+LOC_BET,NATURE,funkcja przyrodnicza,6,387.0,0,0,68.0
+LOC_BET,PV_BESS,PV/BESS na terenach poprzemysłowych,1,126.4,89,199,73.0
+LOC_BET,WATER,zbiornik wodny,2,134.8,0,0,62.8
+LOC_DEL,NATURE,funkcja przyrodnicza,3,322.7,0,0,65.7
+LOC_GAM,NATURE,funkcja przyrodnicza,6,471.5,0,0,66.1

@@ -1,0 +1,3 @@
+model,accuracy,macro_f1
+baseline_most_frequent,0.2682170542635659,0.05287286063569682
+tfidf_logistic_regression,0.875968992248062,0.8894037504417129

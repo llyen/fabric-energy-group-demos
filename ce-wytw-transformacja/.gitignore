@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+
+# Fabric / local artifacts
+*.pbix
+*.pbit
+*.bak
+*.log
+
+# Secrets / configs
+config.json
+local.settings.json
+
+# Generated scratch exports
+datasets/raw_exports/

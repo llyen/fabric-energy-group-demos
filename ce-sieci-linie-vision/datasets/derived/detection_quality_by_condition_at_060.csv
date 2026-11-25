@@ -1,0 +1,10 @@
+acquisition_condition,confidence_threshold,precision,recall,f1,detections_above_threshold,false_positive_count,false_negative_count,followup_team_hours_from_fp,missed_defect_weight,candidate_count,actual_defect_count
+clear_day,0.6,1.0,0.343,0.511,24,0,46,0.0,46.0,93,70
+dirty_lens,0.6,0.5,0.043,0.08,2,1,22,2.0,22.0,31,23
+glare,0.6,1.0,0.162,0.279,6,0,31,0.0,31.0,47,37
+motion_blur,0.6,1.0,0.067,0.125,1,0,14,0.0,14.0,20,15
+oblique_view,0.6,1.0,0.231,0.375,3,0,10,0.0,10.0,19,13
+occlusion,0.6,0.0,0.0,0.0,0,0,11,0.0,11.0,23,11
+rain,0.6,1.0,0.19,0.32,4,0,17,0.0,17.0,28,21
+shadow,0.6,0.833,0.4,0.541,12,2,15,4.0,15.0,46,25
+snow_ice,0.6,0.0,0.0,0.0,1,1,14,2.0,14.0,21,14

@@ -1,0 +1,8 @@
+{
+  "corr_wind_faults": 0.5594209960948627,
+  "corr_lightning_faults": 0.5837834549217138,
+  "corr_precip_faults": 0.5892088088205032,
+  "corr_storm_intensity_faults": 0.584096270100402,
+  "peak_12h_unplanned_faults": 9,
+  "total_unplanned_faults": 34
+}

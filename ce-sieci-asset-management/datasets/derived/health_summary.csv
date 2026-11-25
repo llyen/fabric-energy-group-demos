@@ -1,0 +1,5 @@
+health_band,asset_count,customers_served,avg_health_index
+good,238,305722,25.9
+watch,232,306212,43.96
+poor,45,51611,60.76
+critical,7,6455,74.51

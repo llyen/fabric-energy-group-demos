@@ -1,0 +1,4 @@
+segment_name,program_customers_count,expected_responding_customers_at_20pct,avg_kw_per_program_customer_at_20pct,avg_kw_per_responding_customer,portfolio_mw_at_20pct
+flat_profile,8638.0,1727.6000000000001,0.016856732993748555,0.08428366496874277,0.1456084596
+pv_midday_exporter,23349.0,4669.8,0.09996549702342714,0.4998274851171356,2.33409439
+storage_optimizer,4013.0,802.6,0.1188197220533267,0.5940986102666334,0.47682354460000004

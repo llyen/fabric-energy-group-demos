@@ -1,0 +1,24 @@
+flowchart LR
+  AMI[AMI/LZO head-end
+profile 15-min, events last-gasp] --> ES[Fabric Eventstream]
+  MDM[MDM / walidacja odczytów] --> LH[Lakehouse
+rejestry, wymiary, wyniki]
+  GIS[GIS/DMS syntetyczny
+stacje, fazy, topologia] --> LH
+  ES --> EH[Eventhouse / KQL DB
+okna czasowe, jakość, napięcia]
+  EH --> RTD[Real-Time Dashboard
+kompletność, napięcia, last-gasp]
+  EH --> ACT[Data Activator
+reguły jakości i napięcia]
+  LH --> NB[Notebooks Python
+rekonstrukcja, bilans, PV]
+  NB --> LH
+  LH --> SEM[Semantic model]
+  SEM --> PBI[Power BI report]
+  LH --> DA[Data Agent
+pytania z ograniczeniami]
+  PBI --> APP[Fabric App
+zlecenie weryfikacji]
+  APP --> LH
+  ACT --> TEAMS[Teams/e-mail/work item]

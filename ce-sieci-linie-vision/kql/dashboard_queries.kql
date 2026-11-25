@@ -1,0 +1,10 @@
+// Kafle Real-Time Dashboard
+SubstationTelemetry | summarize Records=count(), Latest=max(event_timestamp_utc)
+
+AiVisionDetection | summarize Detections=count(), HighConfidence=countif(confidence >= 0.60), Unverified=countif(confidence >= 0.60 and human_verified == 0)
+
+ProtectionEvent | summarize Events=count(), High=countif(severity == 'high') by bin(event_timestamp_utc, 1h)
+
+HighLoadSubstations(0.85)
+
+UnverifiedVisionQueue(0.60) | take 50

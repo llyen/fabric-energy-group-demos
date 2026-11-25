@@ -1,0 +1,20 @@
+// Low storage SOC
+StorageTelemetry
+| where soc_mwh < 120
+| summarize consecutive_hours=count() by storage_id, bin(local_timestamp, 2h)
+| where consecutive_hours >= 2
+
+// High network losses
+HeatBalanceHourly()
+| extend loss_ratio = network_losses_mwh / (heat_production_mwh - network_losses_mwh)
+| where loss_ratio > 0.045
+
+// Balance residual
+HeatBalanceHourly()
+| where residual > 0.01
+
+// Negative price with CHP production
+ElectricityPrices
+| where price_pln_per_mwh < 0
+| join kind=inner (SourceTelemetry | where operating_mode == 'chp' and heat_production_mwh > 0) on local_timestamp
+| project local_timestamp, heat_source_id, price_pln_per_mwh, heat_production_mwh, electricity_generation_mwh

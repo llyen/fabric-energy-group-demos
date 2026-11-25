@@ -1,0 +1,11 @@
+NegativePriceCurtailmentWindow()
+| summarize intervals=count(), lost_mw_avg=avg(lost_power_mw) by bin(event_timestamp_utc, 30m)
+| where intervals >= 2 and lost_mw_avg > 5
+
+OzeTelemetryRaw
+| where telemetry_type == "wind"
+| summarize wind_mw=sum(active_power_mw) by bin(event_timestamp_utc, 15m)
+| order by event_timestamp_utc asc
+| extend prev_1h = prev(wind_mw, 4)
+| extend drop_pct = 100.0 * (prev_1h - wind_mw) / prev_1h
+| where drop_pct > 25

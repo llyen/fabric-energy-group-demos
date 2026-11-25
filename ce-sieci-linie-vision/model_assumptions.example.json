@@ -1,0 +1,47 @@
+{
+  "model_assumptions": {
+    "ai_detection_confidence_threshold": {
+      "value": 0.60,
+      "meaning": "Minimalny confidence, od którego detekcja AI vision trafia do kolejki wysokiej pewności i do komponentu ryzyka.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    },
+    "risk_score_weights": {
+      "value": {
+        "condition_component": 0.42,
+        "customer_component": 0.24,
+        "strategic_component": 0.20,
+        "ai_component": 0.14
+      },
+      "meaning": "Wagi domenowego składnika risk_score: stan przewodu, liczba zasilanych odbiorców, znaczenie ciągu i sygnały AI vision. Suma wag = 1.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    },
+    "risk_score_blend": {
+      "value": {
+        "domain_score": 0.65,
+        "ml_failure_probability": 0.35
+      },
+      "meaning": "Połączenie jawnego scoringu domenowego z demonstracyjnym prawdopodobieństwem awarii z modelu ML.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    },
+    "preventable_outage_capture_rate": {
+      "value": 0.70,
+      "meaning": "Udział skutków awarii przewodów i osprzętu, których można uniknąć, jeżeli odcinek objęty planem zostanie wykonana przed awarią.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    },
+    "sensitivity_preventable_outage_capture_rates": {
+      "value": [0.50, 0.60, 0.70, 0.80],
+      "meaning": "Zakres analizy wrażliwości dla udziału unikniętych przerw u odbiorców.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    },
+    "sensitivity_risk_weight_profiles": {
+      "value": {
+        "default": {"condition_component": 0.42, "customer_component": 0.24, "strategic_component": 0.20, "ai_component": 0.14},
+        "customer_heavy": {"condition_component": 0.34, "customer_component": 0.34, "strategic_component": 0.20, "ai_component": 0.12},
+        "asset_condition_heavy": {"condition_component": 0.55, "customer_component": 0.18, "strategic_component": 0.17, "ai_component": 0.10},
+        "ai_signal_heavy": {"condition_component": 0.36, "customer_component": 0.22, "strategic_component": 0.18, "ai_component": 0.24}
+      },
+      "meaning": "Profile analizy wrażliwości pokazujące, czy ranking top 18 jest odporny na zmianę wag scoringu.",
+      "status": "założenie modelowe, do kalibracji z ekspertami klienta"
+    }
+  }
+}

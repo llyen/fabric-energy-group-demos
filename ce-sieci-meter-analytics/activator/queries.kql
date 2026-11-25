@@ -1,0 +1,19 @@
+// Activator source: quality below first-class threshold
+MeterReading
+| summarize expected=count(), missing=countif(quality_flag == "missing"), late=countif(quality_flag == "late") by station_id, bin(event_timestamp_utc, 1h)
+| extend completeness_pct = 100.0 * (expected - missing) / expected,
+         ontime_pct = 100.0 * (expected - missing - late) / expected
+| where completeness_pct < 98 or ontime_pct < 97
+
+// Activator source: sustained voltage exceedance without customer complaint feed
+MeterReading
+| where quality_flag !in ("missing", "suspect")
+| where voltage_v > 253 or (voltage_v < 207 and voltage_v > 100)
+| summarize exceedance_intervals=count(), meters=dcount(meter_id) by station_id, bin(event_timestamp_utc, 1h)
+| where meters >= 25 and exceedance_intervals >= 50
+
+// Activator source: last-gasp concentration
+MeterEvent
+| where event_type == "last_gasp"
+| summarize events=count(), meters=dcount(meter_id) by station_id, bin(event_timestamp_utc, 15m)
+| where meters >= 50

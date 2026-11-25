@@ -1,0 +1,7 @@
+// Rule input: rising gearbox anomaly for high-value turbine
+WindScada10m
+| where event_timestamp_utc > ago(3d)
+| where planned_outage == false and quality_flag == 'good'
+| extend relative_loss = iff(expected_power_mw > 0.25, (expected_power_mw - active_power_mw) / expected_power_mw, 0.0)
+| summarize p90_loss_pct=percentile(relative_loss * 100, 90), p95_temp=percentile(gearbox_oil_temp_c,95), p95_vibration=percentile(vibration_mm_s,95) by asset_id, site_id
+| where p90_loss_pct > 11 and p95_vibration > 4.5

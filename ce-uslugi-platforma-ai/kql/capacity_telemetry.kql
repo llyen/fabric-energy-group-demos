@@ -1,0 +1,25 @@
+// KQL dla Eventhouse: strumień capacity_telemetry.jsonl.
+.create-merge table CapacityTelemetry (
+  event_timestamp_utc: datetime,
+  month: string,
+  data_product_id: string,
+  workspace_domain: string,
+  owning_company: string,
+  capacity_name: string,
+  cu_hours: real,
+  interactive_cu_hours: real,
+  background_cu_hours: real,
+  synthetic_cost_pln: real,
+  local_timezone: string,
+  settlement_interval: string,
+  source_system: string,
+  quality_flag: string,
+  ingestion_timestamp: datetime,
+  data_version: string
+)
+
+// Koszt Q4 per produkt danych.
+CapacityTelemetry
+| where month in ("2026-10", "2026-11", "2026-12")
+| summarize q_cu_hours=sum(cu_hours), q_cost_pln=sum(synthetic_cost_pln) by data_product_id, owning_company, workspace_domain
+| order by q_cost_pln desc

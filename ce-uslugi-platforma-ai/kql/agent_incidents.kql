@@ -1,0 +1,20 @@
+// KQL dla Eventhouse: strumień agent_incident_stream.jsonl.
+.create-merge table AgentIncidents (
+  incident_id: string,
+  event_timestamp_utc: datetime,
+  agent_id: string,
+  severity: string,
+  incident_type: string,
+  resolved: bool,
+  local_timezone: string,
+  settlement_interval: string,
+  source_system: string,
+  quality_flag: string,
+  ingestion_timestamp: datetime,
+  data_version: string
+)
+
+AgentIncidents
+| where event_timestamp_utc between (datetime(2026-10-01) .. datetime(2026-12-31))
+| summarize incidents=count(), high_incidents=countif(severity == "high"), open_incidents=countif(resolved == false) by agent_id
+| order by high_incidents desc, incidents desc

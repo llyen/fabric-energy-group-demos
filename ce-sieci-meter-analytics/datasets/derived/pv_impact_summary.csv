@@ -1,0 +1,10 @@
+metric,value,unit
+pv_meter_count,5841.0,meters
+pv_share_pct,24.34,%
+pv_midday_avg_voltage_v,252.914,V
+nonpv_midday_avg_voltage_v,230.936,V
+pv_midday_voltage_lift_vs_nonpv_v,21.979,V
+pv_evening_voltage_lift_vs_nonpv_v,0.288,V
+reverse_flow_meters_midday,5834.0,meters
+reverse_flow_meter_intervals_midday,139143.0,meter_intervals
+stations_with_reverse_flow,32.0,stations

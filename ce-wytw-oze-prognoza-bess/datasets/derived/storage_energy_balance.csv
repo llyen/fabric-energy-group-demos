@@ -1,0 +1,3 @@
+storage_type,charged_or_pumped_mwh,generated_or_discharged_mwh,observed_output_input_ratio
+ESP,2749.5,1914.688,0.696
+BESS,2224.764,1755.0,0.789

@@ -1,0 +1,2 @@
+target_asset_id,reference_failure_timestamp,power_curve_alert_threshold_pct,first_power_curve_alert_date,lead_time_days,power_curve_auc_failure_30d
+WTG-W02-03,2026-09-15T10:00:00+02:00,11.0,2026-07-24T00:00:00+02:00,53,0.686

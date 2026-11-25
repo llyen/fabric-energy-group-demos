@@ -1,0 +1,2 @@
+rows_weather,rows_weather_forecast,rows_prices,rows_demand,rows_source_telemetry,rows_storage_telemetry,rows_network_telemetry,dst_hours_total,max_abs_balance_residual_mwh,negative_price_hours
+17520,17520,17520,17520,70080,17520,210240,17520,0.0,298

@@ -1,0 +1,17 @@
+{
+  "fabric": {
+    "workspace_name": "CE-Uslugi-Platforma-AI-Demo",
+    "lakehouse_name": "LH_PlatformaAI",
+    "eventhouse_name": "EH_PlatformTelemetry",
+    "semantic_model_name": "SM_PlatformaAI"
+  },
+  "demo": {
+    "seed": 42,
+    "reference_quarter": "2026Q4",
+    "currency": "PLN_SYNTHETIC",
+    "timezone": "Europe/Warsaw"
+  },
+  "secrets": {
+    "note": "Nie wpisuj poświadczeń w tym pliku. Użyj Key Vault albo zmiennych środowiskowych."
+  }
+}

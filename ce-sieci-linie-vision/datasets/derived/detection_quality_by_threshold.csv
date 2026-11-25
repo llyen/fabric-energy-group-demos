@@ -1,0 +1,8 @@
+acquisition_condition,confidence_threshold,precision,recall,f1,detections_above_threshold,false_positive_count,false_negative_count,followup_team_hours_from_fp,missed_defect_weight,candidate_count,actual_defect_count
+all,0.3,0.875,0.581,0.698,152,19,96,38.0,96.0,328,229
+all,0.4,0.883,0.463,0.607,120,14,123,28.0,123.0,328,229
+all,0.5,0.89,0.354,0.506,91,10,148,20.0,148.0,328,229
+all,0.6,0.925,0.214,0.348,53,4,180,8.0,180.0,328,229
+all,0.7,0.95,0.083,0.153,20,1,210,2.0,210.0,328,229
+all,0.8,1.0,0.031,0.059,7,0,222,0.0,222.0,328,229
+all,0.9,1.0,0.004,0.009,1,0,228,0.0,228.0,328,229

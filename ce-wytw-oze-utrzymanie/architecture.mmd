@@ -1,0 +1,24 @@
+flowchart LR
+    subgraph Sources[Źródła IT/OT]
+        W[SCADA turbin IEC 61400-25]
+        P[SCADA PV]
+        H[Historian hydro/ESP]
+        E[SAP PM/EAM + CMMS]
+    end
+    W --> ES[Eventstream]
+    P --> ES
+    H --> ES
+    ES --> EH[Eventhouse / KQL DB]
+    E --> LH[Lakehouse Delta]
+    EH --> NB[Notebooks: drift, PR, temperatura, ranking]
+    LH --> NB
+    NB --> D[(datasets/derived / Delta results)]
+    D --> SM[Semantic model]
+    EH --> RT[Real-Time Dashboard]
+    SM --> PBI[Power BI report]
+    D --> ACT[Data Activator]
+    ACT --> TEAMS[Teams/e-mail alert]
+    D --> AG[Data Agent]
+    PBI --> APP[Fabric App]
+    APP --> WB[Write-back: diagnoza serwisu]
+    WB --> LH

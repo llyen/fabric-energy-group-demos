@@ -1,0 +1,10 @@
+response_rate,segment_name,customers_count,peak_reduction_mw,shifted_energy_mwh,rebound_energy_mwh,rebound_ratio
+0.1,flat_profile,8638,0.0728,0.1456,0.1165,0.8
+0.1,pv_midday_exporter,23349,1.167,2.3341,1.8673,0.8
+0.1,storage_optimizer,4013,0.2384,0.4768,0.3815,0.8
+0.2,flat_profile,8638,0.1456,0.2912,0.233,0.8
+0.2,pv_midday_exporter,23349,2.3341,4.6682,3.7346,0.8
+0.2,storage_optimizer,4013,0.4768,0.9536,0.7629,0.8
+0.35,flat_profile,8638,0.2548,0.5096,0.4077,0.8
+0.35,pv_midday_exporter,23349,4.0847,8.1693,6.5355,0.8
+0.35,storage_optimizer,4013,0.8344,1.6689,1.3351,0.8

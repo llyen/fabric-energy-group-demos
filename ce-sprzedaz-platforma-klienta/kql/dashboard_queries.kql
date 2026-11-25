@@ -1,0 +1,13 @@
+// Aktualny profil portfela.
+PortfolioAmi15m
+| summarize arg_max(event_timestamp_utc, *)
+
+// Redukcja mocy w oknie 18:00-20:00 lokalnie, pokazana wg scenariusza reakcji.
+DsrEventTelemetry
+| where event_timestamp_utc between (datetime(2026-06-18T16:00:00Z) .. datetime(2026-06-18T18:00:00Z))
+| summarize peak_reduction_mw = abs(min(delta_mw)) by response_rate
+
+// Rebound po oknie DSR.
+DsrEventTelemetry
+| where event_timestamp_utc between (datetime(2026-06-18T18:00:00Z) .. datetime(2026-06-18T22:00:00Z))
+| summarize rebound_mwh = sum(delta_mw) * 0.25 by response_rate

@@ -1,0 +1,28 @@
+// Biezacy stan obwodu.
+.create-or-alter function CurrentCircuitState() {
+  ScadaFeederTelemetry
+  | summarize arg_max(event_timestamp_local, *) by feeder_id
+  | project event_timestamp_local, feeder_id, branch_id, voltage_kv, current_a, breaker_state, operational_status, storm_intensity
+}
+
+// Wykrycie zaniku: SCADA open/outage + AMI last-gasp w tym samym oknie.
+.create-or-alter function DetectVoltageLoss(window:timespan = 10m) {
+  let scada = ScadaFeederTelemetry
+    | where event_timestamp_local > ago(window)
+    | where breaker_state == "open" or operational_status has "outage"
+    | summarize last_scada=max(event_timestamp_local), min_voltage=min(voltage_kv) by feeder_id;
+  let ami = AmiVoltageEvents
+    | where event_timestamp_local > ago(window)
+    | where event_type == "last_gasp"
+    | summarize ami_last_gasp=count(), last_ami=max(event_timestamp_local) by feeder_id;
+  scada | join kind=leftouter ami on feeder_id
+  | extend evidence = strcat("SCADA voltage=", tostring(min_voltage), "; AMI=", tostring(coalesce(ami_last_gasp,0)))
+}
+
+// Prognoza ryzyka z ostatniego scoringu.
+.create-or-alter function RiskForecast(threshold:real = 0.67) {
+  RiskScores
+  | summarize arg_max(event_timestamp_local, *) by feeder_id
+  | where risk_score >= threshold
+  | project feeder_id, branch_id, risk_score, risk_decile
+}

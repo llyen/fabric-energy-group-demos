@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+
+# Local Fabric / Power BI artifacts
+*.pbix
+*.pbit
+*.bim
+*.abf
+*.bak
+
+# Logs and local outputs
+*.log
+.DS_Store
+Thumbs.db
+
+# Large regenerated intermediate CSVs (Parquet is used instead)
+datasets/derived/features_*.csv
+datasets/fact_portfolio_load_15min.csv
+
+# Secrets / private config
+config.json
+local.settings.json

@@ -1,0 +1,69 @@
+{
+  "tables": [
+    {
+      "file": "dim_ash_storage.csv",
+      "rows": 6
+    },
+    {
+      "file": "dim_coal_yard.csv",
+      "rows": 6
+    },
+    {
+      "file": "dim_cooling_pond.csv",
+      "rows": 5
+    },
+    {
+      "file": "dim_decommissioning_package.csv",
+      "rows": 31
+    },
+    {
+      "file": "dim_environmental_monitoring_point.csv",
+      "rows": 56
+    },
+    {
+      "file": "dim_fuel_supply_site.csv",
+      "rows": 2
+    },
+    {
+      "file": "dim_land_use_after_reclamation.csv",
+      "rows": 128
+    },
+    {
+      "file": "dim_location.csv",
+      "rows": 4
+    },
+    {
+      "file": "dim_power_unit.csv",
+      "rows": 17
+    },
+    {
+      "file": "dim_reclamation_area.csv",
+      "rows": 32
+    },
+    {
+      "file": "dim_water_body.csv",
+      "rows": 12
+    },
+    {
+      "file": "fact_capex.csv",
+      "rows": 191
+    },
+    {
+      "file": "fact_environmental_decision.csv",
+      "rows": 32
+    },
+    {
+      "file": "fact_environmental_monitoring.csv",
+      "rows": 1344
+    },
+    {
+      "file": "fact_jobs_transition.csv",
+      "rows": 640
+    },
+    {
+      "file": "fact_permit.csv",
+      "rows": 32
+    }
+  ],
+  "total_rows": 2538
+}

@@ -1,0 +1,4 @@
+lost_production_delay_multiplier,baseline_expected_lost_mwh,optimized_expected_lost_mwh,avoidable_lost_production_mwh,avoidable_lost_production_pct,top5_baseline_order,top5_value_aware_order,target_in_top5_value_aware
+0.3,64.7,57.2,7.5,11.6,WTG-W01-01|INV-P02-02|WTG-W02-02|PMP-01-01|HYD-OLC-01,PMP-01-01|WTG-W02-03|INV-P01-01|PMP-01-02|WTG-W02-02,True
+0.42,67.7,57.2,10.5,15.5,WTG-W01-01|INV-P02-02|WTG-W02-02|PMP-01-01|HYD-OLC-01,PMP-01-01|WTG-W02-03|INV-P01-01|PMP-01-02|WTG-W02-02,True
+0.55,71.0,57.2,13.8,19.4,WTG-W01-01|INV-P02-02|WTG-W02-02|PMP-01-01|HYD-OLC-01,PMP-01-01|WTG-W02-03|INV-P01-01|PMP-01-02|WTG-W02-02,True

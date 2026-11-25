@@ -1,0 +1,14 @@
+flowchart LR
+  SRC[AMI/LZO, Billing/CRM, RDN, CSIRE context] --> ES[Eventstream DSR telemetry]
+  SRC --> LH[Lakehouse lh_customer_energy_flex]
+  ES --> EH[Eventhouse eh_customer_flex]
+  EH --> RT[Real-Time Dashboard]
+  LH --> NB[Fabric Notebooks: segmentation, tariffs, DSR, storage, portfolio]
+  NB --> DER[Derived tables]
+  DER --> SM[Semantic model]
+  SM --> PBI[Power BI report]
+  DER --> APP[Fabric App: DSR program configurator]
+  EH --> ACT[Data Activator]
+  DER --> AGENT[Data Agent]
+  ACT --> TEAMS[Teams/e-mail alert]
+  APP --> LH

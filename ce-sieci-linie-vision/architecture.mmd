@@ -1,0 +1,19 @@
+flowchart LR
+  A[Drone inspection\nAI vision detections\nsynthetic metadata] --> ES[Fabric Eventstream]
+  T[SCADA primary substations\nload, current, PQI] --> ES
+  P[Protection events] --> ES
+  ES --> EH[Eventhouse / KQL DB]
+  LH[Lakehouse\nasset registry, linear km model, history, section load] --> NB[Fabric notebooks]
+  EH --> NB
+  NB --> DER[Derived risk, degradation, outage impact, window plan]
+  DER --> PBI[Power BI semantic model and report]
+  EH --> RTD[Real-Time Dashboard]
+  DER --> ACT[Data Activator]
+  EH --> ACT
+  PBI --> APP[Fabric App\ninspector verification and work order]
+  APP --> LH
+  APP --> FB[Feedback loop\nhuman labels for AI vision]
+  FB --> LH
+  LH --> DA[Data Agent]
+  EH --> DA
+  DER --> DA

@@ -1,0 +1,2 @@
+baseline_abs_error_mwh,model_abs_error_mwh,error_reduction_pct,baseline_cost_pln,model_cost_pln,cost_reduction_pct,baseline_cost_per_abs_error_pln_mwh,model_cost_per_abs_error_pln_mwh,unit_cost_increase_pct,business_interpretation
+175036.21,58145.2,66.78,21583895.13,7976848.81,63.04,123.31,137.19,11.25,"Forecast error is much smaller, but the remaining error is more expensive per MWh; optimizing forecast accuracy and optimizing imbalance cost are not the same objective."

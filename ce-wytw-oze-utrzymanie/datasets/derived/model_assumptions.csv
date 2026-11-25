@@ -1,0 +1,18 @@
+parameter,value,meaning,status
+lost_production_delay_multiplier,0.42,Udział 30-dniowej oczekiwanej produkcji narażony przez opóźnienie pracy serwisowej po uwzględnieniu ryzyka awarii.,"założenie modelowe, do kalibracji z ekspertami klienta"
+residual_risk_multiplier,0.08,"Minimalna część ryzyka pozostająca nawet po wcześniejszym wykonaniu pracy; odzwierciedla, że inspekcja nie usuwa całej niepewności.","założenie modelowe, do kalibracji z ekspertami klienta"
+delay_normalization_days,12.0,"Liczba dni opóźnienia, po której komponent opóźnienia osiąga pełną wagę dla aktywa o risk_score=1.","założenie modelowe, do kalibracji z ekspertami klienta"
+optimized_plan_early_start_days_before_d0,21.0,"Najwcześniejsza data, od której wariant value_aware może przesuwać prace przed zdarzeniem D0.","założenie modelowe, do kalibracji z ekspertami klienta"
+capacity_factor_assumptions.wind,0.36,Wrześniowy współczynnik wykorzystania mocy dla lądowego wiatru w demo.,"założenie modelowe, do kalibracji z ekspertami klienta"
+capacity_factor_assumptions.pv,0.13,"Wrześniowy współczynnik wykorzystania mocy PV; profil PV nadal wynika z pozycji Słońca, a nocą produkcja wynosi zero.","założenie modelowe, do kalibracji z ekspertami klienta"
+capacity_factor_assumptions.hydro_run_of_river,0.43,Współczynnik wykorzystania mocy dla elektrowni przepływowych zależnych od przepływu hydrologicznego.,"założenie modelowe, do kalibracji z ekspertami klienta"
+capacity_factor_assumptions.esp,0.11,"Współczynnik generacji netto dla ESP pracujących interwencyjnie; nie znosi założenia o stratnym cyklu 0,76.","założenie modelowe, do kalibracji z ekspertami klienta"
+baseline_operating_capacity_factor.wind,0.34,"Ekspozycja godzinowa baseline'u kalendarzowego dla wiatru, liczona jako czas od ostatniego serwisu razy typowy udział godzin pracy.","założenie modelowe, do kalibracji z ekspertami klienta"
+baseline_operating_capacity_factor.pv,0.12,Ekspozycja godzinowa baseline'u kalendarzowego dla PV; nie zastępuje profilu słonecznego w generatorze.,"założenie modelowe, do kalibracji z ekspertami klienta"
+baseline_operating_capacity_factor.hydro_run_of_river,0.42,Ekspozycja godzinowa baseline'u kalendarzowego dla hydro przepływowego.,"założenie modelowe, do kalibracji z ekspertami klienta"
+baseline_operating_capacity_factor.esp,0.1,Ekspozycja godzinowa baseline'u kalendarzowego dla ESP pracujących interwencyjnie.,"założenie modelowe, do kalibracji z ekspertami klienta"
+baseline_service_cycle_days.wind,180.0,Syntetyczny cykl przeglądu użyty przez baseline kalendarzowy dla turbin.,"założenie modelowe, do kalibracji z ekspertami klienta"
+baseline_service_cycle_days.pv,210.0,Syntetyczny cykl przeglądu użyty przez baseline kalendarzowy dla PV.,"założenie modelowe, do kalibracji z ekspertami klienta"
+baseline_service_cycle_days.hydro_run_of_river,240.0,Syntetyczny cykl przeglądu użyty przez baseline kalendarzowy dla hydro.,"założenie modelowe, do kalibracji z ekspertami klienta"
+baseline_service_cycle_days.esp,240.0,Syntetyczny cykl przeglądu użyty przez baseline kalendarzowy dla ESP.,"założenie modelowe, do kalibracji z ekspertami klienta"
+risk_alert_threshold_train_non_failure_quantile,0.97,Próg alertu do rozkładu lead time: percentyl score'u na wierszach treningowych bez awarii w oknie 30 dni.,wynika z danych treningowych po wyborze jawnego percentyla; percentyl do kalibracji z ekspertami klienta

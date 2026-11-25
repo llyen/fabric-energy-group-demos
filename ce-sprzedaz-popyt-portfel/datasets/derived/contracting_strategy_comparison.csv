@@ -1,0 +1,6 @@
+strategy,hedge_note,contracted_mwh,actual_mwh,absolute_error_mwh,wape_pct,p95_abs_error_mwh_15min,imbalance_cost_pln,risk_measure,cvar95_cost_pln_15min,rank_by_cost,rank_by_cvar95,cost_delta_vs_best_pln
+ml_expected_one_shot,pozycja jednorazowa według wartości oczekiwanej modelu,2056300.51,2076666.04,58145.2,2.8,11.671,7976848.81,synthetic_CVaR95_imbalance_cost,4572.74,1,2,0.0
+ml_risk_aware_q70,"zabezpieczenie bliżej kwantyla 70%, gdy niedobór jest droższy od nadwyżki",2102462.65,2076666.04,65052.14,3.13,12.206,8693963.45,synthetic_CVaR95_imbalance_cost,4425.86,2,1,717114.64
+conservative_q90,maksymalizacja ochrony przed niedoborem kosztem nadkontraktacji,2148624.79,2076666.04,92876.44,4.47,16.26,11822283.77,synthetic_CVaR95_imbalance_cost,4752.66,3,3,3845434.96
+staged_annual_month_week_day,"30% profil bazowy, 25% korekta tygodniowa, 45% forecast day-ahead q60",2034492.63,2076666.04,109558.05,5.28,23.273,13748687.76,synthetic_CVaR95_imbalance_cost,6408.78,4,4,5771838.95
+baseline_one_shot_prev_week,pozycja jednorazowa z profilu sprzed tygodnia,2038280.22,2076666.04,175036.21,8.43,34.526,21583895.13,synthetic_CVaR95_imbalance_cost,8480.04,5,5,13607046.32

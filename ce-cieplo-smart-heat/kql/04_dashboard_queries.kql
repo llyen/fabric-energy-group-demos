@@ -1,0 +1,18 @@
+// Kafel: ostatni stan magazynu
+CurrentStorage()
+
+// Kafel: produkcja i emisje w oknie
+HeatBalanceHourly()
+| where local_timestamp between (datetime(2026-02-08T06:00:00+01:00) .. datetime(2026-02-15T06:00:00+01:00))
+| summarize heat_mwh=sum(heat_production_mwh), electricity_mwh=sum(electricity_generation_mwh), emissions_tco2=sum(emissions_tco2), max_residual=max(residual)
+
+// Trend strat sieci
+NetworkTelemetry
+| where local_timestamp between (datetime(2026-02-08T06:00:00+01:00) .. datetime(2026-02-15T06:00:00+01:00))
+| summarize losses_mwh=sum(heat_loss_mwh), avg_supply_temp_c=avg(supply_temp_c), avg_ambient_temp_c=avg(ambient_temp_c) by bin(local_timestamp, 1h)
+| order by local_timestamp asc
+
+// Ceny ujemne
+ElectricityPrices
+| where price_pln_per_mwh < 0
+| summarize count() by bin(local_timestamp, 1d)

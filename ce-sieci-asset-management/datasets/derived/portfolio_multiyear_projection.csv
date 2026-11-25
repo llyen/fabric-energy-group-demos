@@ -1,0 +1,6 @@
+planning_year,cycle_number,annual_budget_mpln_synthetic,age_based_annual_saidi_reduction_min,risk_based_annual_saidi_reduction_min,annual_delta_saidi_min,cumulative_delta_saidi_min,projection_status
+2027,1,34.0,0.367,0.959,0.592,0.592,"założenie modelowe: powtarzalny roczny cykl o podobnym budżecie i profilu ryzyka, do kalibracji z rzeczywistym portfelem"
+2028,2,34.0,0.367,0.959,0.592,1.184,"założenie modelowe: powtarzalny roczny cykl o podobnym budżecie i profilu ryzyka, do kalibracji z rzeczywistym portfelem"
+2029,3,34.0,0.367,0.959,0.592,1.776,"założenie modelowe: powtarzalny roczny cykl o podobnym budżecie i profilu ryzyka, do kalibracji z rzeczywistym portfelem"
+2030,4,34.0,0.367,0.959,0.592,2.368,"założenie modelowe: powtarzalny roczny cykl o podobnym budżecie i profilu ryzyka, do kalibracji z rzeczywistym portfelem"
+2031,5,34.0,0.367,0.959,0.592,2.96,"założenie modelowe: powtarzalny roczny cykl o podobnym budżecie i profilu ryzyka, do kalibracji z rzeczywistym portfelem"

@@ -1,0 +1,10 @@
+.env
+*.env
+config.json
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
+datasets/raw/*.parquet
+datasets/derived/*.parquet

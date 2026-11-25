@@ -1,0 +1,11 @@
+// Przyklad update policy: normalizacja zdarzen do stanu obwodu.
+.create table CircuitStateMinute (event_timestamp_local:datetime, feeder_id:string, branch_id:string, voltage_kv:real, current_a:real, operational_status:string, risk_score:real)
+.alter table CircuitStateMinute policy update @'[
+  {
+    "IsEnabled": true,
+    "Source": "ScadaFeederTelemetry",
+    "Query": "ScadaFeederTelemetry | summarize arg_max(event_timestamp_local, *) by feeder_id, bin(event_timestamp_local, 1m) | project event_timestamp_local, feeder_id, branch_id, voltage_kv, current_a, operational_status, risk_score=real(null)",
+    "IsTransactional": false,
+    "PropagateIngestionProperties": true
+  }
+]'

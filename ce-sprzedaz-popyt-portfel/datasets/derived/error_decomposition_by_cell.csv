@@ -1,0 +1,13 @@
+portfolio_cell_id,segment,risk_label,actual_mwh,abs_error_mwh,imbalance_cost_pln,cum_cost_share_pct,cum_volume_share_pct
+CELL_HH_HP,heat_pump_households,tail_risk,145669.42,29217.73,3470374.54,17.44,7.01
+CELL_INDUSTRY_BATCH,industry_batch,process_risk,143710.64,21263.29,2470648.13,29.85,13.93
+CELL_INDUSTRY_FLAT,industry_flat,stable,333453.52,20367.32,2352499.64,41.67,29.99
+CELL_HH_G11_E,household_g11,stable,322876.6,14382.77,1869107.02,51.07,45.54
+CELL_HH_G11_S,household_g11,pv_sensitive,272867.68,13913.08,1818844.36,60.2,58.68
+CELL_OFFICE,commercial_office,temperature_sensitive,157382.67,12725.09,1657077.48,68.53,66.26
+CELL_HH_G12_E,household_g12,temperature_sensitive,207564.88,11305.41,1469571.2,75.92,76.25
+CELL_SME_COLD,sme_cold_chain,tail_risk,101150.9,11284.73,1449533.56,83.2,81.12
+CELL_SME_RETAIL,sme_retail,stable,209008.48,11672.94,1415716.13,90.31,91.19
+CELL_AGRI,agri_irrigation,weather_sensitive,47436.44,6392.46,806792.66,94.37,93.47
+CELL_PUBLIC,public_services,stable,110160.78,5546.98,687510.41,97.82,98.78
+CELL_E_MOBILITY,e_mobility,tail_risk,25384.03,3806.31,433468.17,100.0,100.0

@@ -1,0 +1,16 @@
+// Q1. Wolumen kontaktów w oknie 15-min
+ContactEvents
+| summarize contacts=count(), escalations=sum(requires_escalation) by bin(event_timestamp_utc, 15m), channel
+| order by event_timestamp_utc asc
+
+// Q2. Przyczyny w ostatnich 2 godzinach
+ContactEvents
+| where event_timestamp_utc > ago(2h)
+| summarize contacts=count(), escalation_rate=avg(todouble(requires_escalation)) by contact_reason
+| order by contacts desc
+
+// Q3. OSD front-door
+ContactEvents
+| where contact_reason == "outage_osd"
+| summarize contacts=count() by bin(event_timestamp_utc, 1h), channel
+| order by event_timestamp_utc asc

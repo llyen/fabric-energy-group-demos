@@ -1,0 +1,7 @@
+// W demo pliki JSONL można ładować bezpośrednio. W produkcji Eventstream mapuje payload do tabel raw,
+// a update policy waliduje typy, quality_flag i data_version przed zapisem do tabel curated.
+.alter table SourceTelemetry policy retention softdelete = 730d
+.alter table StorageTelemetry policy retention softdelete = 730d
+.alter table NetworkTelemetry policy retention softdelete = 730d
+.alter table WeatherHourly policy retention softdelete = 730d
+.alter table ElectricityPrices policy retention softdelete = 730d

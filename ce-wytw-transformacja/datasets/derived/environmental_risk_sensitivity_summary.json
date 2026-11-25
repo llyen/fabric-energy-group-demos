@@ -1,0 +1,18 @@
+[
+  {
+    "scenario": "base",
+    "location_id": "LOC_ALF"
+  },
+  {
+    "scenario": "decision_gap_priority",
+    "location_id": "LOC_DEL"
+  },
+  {
+    "scenario": "geo_hydro_priority",
+    "location_id": "LOC_ALF"
+  },
+  {
+    "scenario": "monitoring_priority",
+    "location_id": "LOC_ALF"
+  }
+]

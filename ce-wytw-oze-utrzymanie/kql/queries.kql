@@ -1,0 +1,27 @@
+// Current high-risk wind anomalies
+let lookback = 3d;
+WindScada10m
+| where event_timestamp_utc > ago(lookback)
+| where quality_flag == 'good' and planned_outage == false
+| extend relative_loss = iff(expected_power_mw > 0.25, (expected_power_mw - active_power_mw) / expected_power_mw, 0.0)
+| summarize p90_loss_pct=percentile(relative_loss * 100, 90), p95_vibration=percentile(vibration_mm_s,95), p95_gearbox_temp=percentile(gearbox_oil_temp_c,95) by asset_id, site_id
+| where p90_loss_pct > 11 or p95_vibration > 5
+| order by p90_loss_pct desc
+
+// PV performance ratio check; PV should be zero at night
+PvScada15m
+| summarize night_generation_mwh=sumif(actual_generation_mwh, solar_elevation_deg <= 0), daylight_generation_mwh=sumif(actual_generation_mwh, solar_elevation_deg > 0)
+
+// ESP operating modes and starts
+EspScada1h
+| where event_timestamp_utc > ago(30d)
+| summarize generation_mwh=sum(actual_generation_mwh), pumping_mwh=sum(pumping_energy_mwh), starts=max(start_count_cumulative)-min(start_count_cumulative) by asset_id, site_id, mode
+
+// Availability split for wind turbines
+WindScada10m
+| where event_timestamp_utc between (datetime(2026-09-01) .. datetime(2026-09-30))
+| summarize intervals=count(), planned_intervals=countif(planned_outage), zero_unplanned=countif(planned_outage == false and expected_power_mw > 0.25 and active_power_mw == 0) by asset_id
+| extend period_h=intervals / 6.0, planned_outage_h=planned_intervals / 6.0, unplanned_outage_h=zero_unplanned / 6.0
+| extend availability_total_pct=100.0 * (period_h - planned_outage_h - unplanned_outage_h) / period_h
+| extend availability_operational_pct=100.0 * (period_h - planned_outage_h - unplanned_outage_h) / (period_h - planned_outage_h)
+| order by availability_operational_pct asc

@@ -1,0 +1,29 @@
+flowchart LR
+  subgraph Sources[Zrodla IT/OT - syntetyczne]
+    SCADA[SCADA / IEC 61850]
+    REC[Reklozery / SPZ]
+    AMI[AMI last-gasp]
+    WX[Meteo]
+    GIS[GIS / ADMS topologia]
+    EAM[SAP PM / EAM historia]
+  end
+  SCADA --> ES[Fabric Eventstream]
+  REC --> ES
+  AMI --> ES
+  WX --> ES
+  ES --> EH[Eventhouse / KQL]
+  GIS --> LH[Lakehouse]
+  EAM --> LH
+  EH --> RTD[Real-Time Dashboard]
+  EH --> NB[Notebooks]
+  LH --> NB
+  NB --> DER[Derived tables]
+  DER --> SM[Semantic model]
+  SM --> PBI[Power BI report]
+  EH --> ACT[Data Activator]
+  DER --> ACT
+  EH --> AG[Data Agent]
+  DER --> AG
+  DER --> APP[Fabric App]
+  APP --> AUDIT[Decision audit log]
+  APP -. zatwierdzenie dyspozytora .-> OT[SCADA/ADMS poza Fabric]

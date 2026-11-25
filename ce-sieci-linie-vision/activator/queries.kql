@@ -1,0 +1,20 @@
+// Reguła 1
+AiVisionDetection
+| where confidence >= 0.60 and defect_class == 'conductor_strand_damage'
+| join kind=inner SectionRiskScore on section_id
+| where selected_by_age == 0 and risk_priority_rank <= 18
+| project event_timestamp_utc, section_id, line_no, km_position, confidence, acquisition_condition, risk_priority_rank
+
+// Reguła 2
+SubstationTelemetry
+| extend load_ratio = load_mw / available_capacity_mw
+| where load_ratio >= 0.85
+| summarize overloaded_samples=count(), max_load_ratio=max(load_ratio) by substation_id, bin(event_timestamp_utc, 30m)
+| where overloaded_samples >= 2
+
+// Reguła 3
+AiVisionDetection
+| where confidence >= 0.80 and human_verified == 0
+| project event_timestamp_utc, section_id, line_no, km_position, defect_class, confidence, acquisition_condition, frame_id
+
+// Reguła 4 jest liczona z Lakehouse: top ryzyka LEFT ANTI JOIN optimized_work_window_plan.

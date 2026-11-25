@@ -1,0 +1,8 @@
+{
+  "target_asset_id": "WTG-W02-03",
+  "reference_failure_timestamp": "2026-09-15T10:00:00+02:00",
+  "power_curve_alert_threshold_pct": 11.0,
+  "first_power_curve_alert_date": "2026-07-24T00:00:00+02:00",
+  "lead_time_days": 53,
+  "power_curve_auc_failure_30d": 0.686
+}

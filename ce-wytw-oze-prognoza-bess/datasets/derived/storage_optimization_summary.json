@@ -1,0 +1,32 @@
+{
+  "scenario_intervals": 480,
+  "negative_price_intervals": 76,
+  "curtailment_during_negative_prices_mwh": 693.272,
+  "curtailment_captured_by_optimized_storage_mwh": 223.496,
+  "curtailment_capture_pct": 32.24,
+  "unserved_curtailment_mwh": 469.777,
+  "total_arbitrage_revenue_pln_synthetic": 2282955.56,
+  "storage_by_type": [
+    {
+      "storage_type": "BESS",
+      "input_mwh": 2343.648,
+      "output_mwh": 1852.5,
+      "captured_curtailment_mwh": 127.501,
+      "arbitrage_revenue_pln_synthetic": 941908.91,
+      "configured_round_trip_efficiency": 0.88,
+      "auxiliary_consumption_mwh": 156.0,
+      "output_input_ratio": 0.79
+    },
+    {
+      "storage_type": "ESP",
+      "input_mwh": 3601.857,
+      "output_mwh": 2660.0,
+      "captured_curtailment_mwh": 95.995,
+      "arbitrage_revenue_pln_synthetic": 1341046.65,
+      "configured_round_trip_efficiency": 0.75,
+      "auxiliary_consumption_mwh": 90.0,
+      "output_input_ratio": 0.739
+    }
+  ],
+  "note": "Przychód liczony wyłącznie na syntetycznych cenach RDN scenariusza; nie jest deklaracją oszczędności Contoso Energia."
+}

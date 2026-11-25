@@ -1,0 +1,9 @@
+{
+  "eventhub_connection_str_env": "EVENTHUB_CONNECTION_STR",
+  "eventhub_name_env": "EVENTHUB_NAME",
+  "eventstream_endpoint": "https://<workspace>.<region>.eventstream.fabric.microsoft.com/<stream>",
+  "workspace_name": "ce-fabric-demo-wytw",
+  "lakehouse_name": "lh_oze_forecast_bess",
+  "eventhouse_name": "eh_oze_realtime",
+  "data_classification": "Synthetic demo data only"
+}

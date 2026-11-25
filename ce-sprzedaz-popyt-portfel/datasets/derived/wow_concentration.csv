@@ -1,0 +1,2 @@
+definition,cells,portfolio_cells,volume_share_pct,cost_share_pct,segments
+"tail/process/weather sensitive cells, local_hour 16-22",5,12,6.18,12.87,"agri_irrigation, e_mobility, heat_pump_households, industry_batch, sme_cold_chain"

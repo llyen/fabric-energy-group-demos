@@ -1,0 +1,6 @@
+{
+  "night_generation_mwh": 0.0,
+  "worst_pv_asset_id": "INV-P01-01",
+  "worst_pv_median_pr": 0.805,
+  "worst_pv_degradation_score_pct": 10.39
+}

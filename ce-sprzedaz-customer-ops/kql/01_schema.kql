@@ -1,0 +1,17 @@
+.create-merge table ContactEvents (
+  event_id:string,
+  contact_id:string,
+  customer_id:string,
+  event_local_timestamp:datetime,
+  channel:string,
+  event_type:string,
+  contact_reason:string,
+  requires_escalation:int,
+  event_timestamp_utc:datetime,
+  local_timezone:string,
+  settlement_interval:string,
+  source_system:string,
+  quality_flag:string,
+  ingestion_timestamp:datetime,
+  data_version:string
+)

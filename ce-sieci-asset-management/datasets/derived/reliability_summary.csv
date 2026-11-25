@@ -1,0 +1,4 @@
+metric_scope,saidi_min_per_customer_year,saifi_interruptions_per_customer_year,maifi_per_customer_year,total_customer_minutes_24m,event_count_24m
+planned,27.16,0.157,0.0,36394473,265
+unplanned,132.39,2.173,0.0,177405463,3426
+momentary,0.0,0.0,6.064,8222563,5179

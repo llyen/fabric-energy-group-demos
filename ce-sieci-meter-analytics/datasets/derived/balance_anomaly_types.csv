@@ -1,0 +1,6 @@
+anomaly_type,station_days,min_abs_kwh,median_abs_kwh,max_abs_kwh,total_abs_kwh,example_station
+constant_unmetered_load,8,147.73,161.1475,179.591,1303.338,ST-034
+intermittent_unmetered_load,1,406.19,406.19,406.19,406.19,ST-019
+low_power_unmetered_load_below_detection_threshold,15,6.0,12.924,18.245,183.054,ST-022
+misassigned_point_pair,64,447.237,473.46950000000004,541.954,30834.984,ST-014
+under_registering_meter_group,32,71.612,71.8385,78.95,2353.475,ST-011

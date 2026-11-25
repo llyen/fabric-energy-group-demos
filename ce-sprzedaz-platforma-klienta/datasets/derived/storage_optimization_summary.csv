@@ -1,0 +1,2 @@
+storage_customers_count,round_trip_efficiency,avg_storage_value_pln,total_storage_value_pln,total_cycle_losses_mwh,max_energy_balance_error_kwh,pv_export_mwh_after_storage
+5671,0.88,0.86,4894.64,24.339,0.0,143.4037

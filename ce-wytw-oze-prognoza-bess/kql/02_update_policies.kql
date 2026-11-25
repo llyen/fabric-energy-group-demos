@@ -1,0 +1,16 @@
+// Example policies for normalized tables in Fabric Eventhouse.
+.create-or-alter function with (folder="oze") CurrentTelemetry() {
+    OzeTelemetryRaw
+    | summarize arg_max(event_timestamp_utc, *) by asset_id
+}
+.create-or-alter function with (folder="oze") CurrentStorage() {
+    StorageStateRaw
+    | summarize arg_max(event_timestamp_utc, *) by storage_id
+}
+.create-or-alter function with (folder="oze") NegativePriceCurtailmentWindow() {
+    OzeTelemetryRaw
+    | summarize active_power_mw=sum(active_power_mw), available_power_mw=sum(available_power_mw) by event_timestamp_utc
+    | join kind=inner (MarketPriceRaw | where market == "RDN" | project event_timestamp_utc, price_pln_per_mwh) on event_timestamp_utc
+    | extend lost_power_mw = available_power_mw - active_power_mw
+    | where price_pln_per_mwh < 0 and lost_power_mw > 5
+}

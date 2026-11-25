@@ -1,0 +1,13 @@
+// High risk feeder
+RiskForecast(0.67)
+| join kind=leftouter (CurrentCircuitState()) on feeder_id
+| project feeder_id, branch_id, risk_score, operational_status, event_timestamp_local
+
+// Voltage loss with AMI evidence
+DetectVoltageLoss(10m)
+| where coalesce(ami_last_gasp, 0) > 20
+
+// FLISR awaiting approval - tabela z Lakehouse importowana do KQL
+SwitchingRecommendations
+| where feasible == true
+| project fault_id, tie_switch_id, source_feeder_id, target_feeder_id, affected_customers, restored_customers

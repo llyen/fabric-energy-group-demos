@@ -1,0 +1,3 @@
+model_name,rows,actual_mwh,forecast_mwh,mae_mwh_15min,absolute_error_mwh,wape_pct,mape_pct,bias_mwh,q10_q90_coverage_pct,raw_q10_q90_coverage_pct,avg_interval_width_mwh_15min,bias_correction_mwh_15min,conformal_qhat_mwh_15min,stress_buffer_mwh_15min,interval_buffer_mwh_15min
+baseline_prev_week,13340,2076666.04,2038280.22,13.1212,175036.21,8.43,8.03,38385.82,,,,,,,
+ml_point_forecast,13340,2076666.04,2056300.51,4.3587,58145.2,2.8,2.68,20365.53,80.1,65.81,13.806,2.1865,0.0,0.9814,0.9814

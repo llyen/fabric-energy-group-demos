@@ -1,0 +1,42 @@
+flowchart LR
+  subgraph Sources[Typowe zrodla IT OT - dane syntetyczne]
+    IT[ERP CRM EAM CMDB]
+    OT[SCADA Historian IDS OT]
+    TEL[Capacity metrics AI Gateway]
+  end
+  subgraph Boundary[Strefa styku IT OT]
+    DMZ[DMZ repliki jednokierunkowe]
+    BLOCK[Zakaz sterowania z analityki]
+  end
+  subgraph Fabric[Microsoft Fabric]
+    ONE[OneLake]
+    WS1[Workspace per domena]
+    LH[Lakehouse medalion]
+    EH[Eventhouse KQL]
+    NB[Notebooki scoring i lineage]
+    SM[Semantic model Direct Lake]
+  end
+  subgraph Governance[Governance]
+    PUR[Purview katalog lineage etykiety]
+    DC[Kontrakty danych]
+    FIN[FinOps allocation chargeback]
+  end
+  subgraph Consumption[Konsumpcja i akcja]
+    PBI[Power BI quarterly review]
+    APP[Fabric App write back]
+    ACT[Data Activator]
+    AG[Data Agent]
+    AF[Agent Factory registry]
+  end
+  IT -->|mirroring pipeline| ONE
+  OT -->|OT to IT only| DMZ --> EH
+  BLOCK -.blokuje.-> OT
+  TEL --> EH
+  ONE --> WS1 --> LH --> NB --> SM --> PBI
+  EH --> FIN
+  LH --> DC --> PUR
+  PUR --> SM
+  APP -->|rejestr produktu agenta| LH
+  ACT -->|alert jakosci kosztow agentow| PBI
+  AG --> SM
+  AF --> AG

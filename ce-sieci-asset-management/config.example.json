@@ -1,0 +1,34 @@
+{
+  "workspace_name": "ce-fabric-demo",
+  "lakehouse_name": "lh_ce_sieci_asset_management",
+  "semantic_model_name": "sm_ce_sieci_asset_management",
+  "report_name": "Risk-based Asset Management",
+  "as_of_date": "2026-08-21",
+  "data_classification": "synthetic_demo",
+  "model_assumptions": {
+    "default_affected_customers_fraction": {
+      "value": 0.55,
+      "status": "założenie modelowe, do kalibracji z ekspertami",
+      "comment": "Udział customers_served używany, gdy aktywo nie ma historii przerw nieplanowanych."
+    },
+    "sensitive_customer_weight": {
+      "value": 0.015,
+      "status": "założenie modelowe, do kalibracji z ekspertami",
+      "comment": "Przyrost mnożnika krytyczności za jednego odbiorcę wrażliwego. Współczynnik jest wartościujący."
+    },
+    "strategic_customer_weight": {
+      "value": 0.04,
+      "status": "założenie modelowe, do kalibracji z ekspertami",
+      "comment": "Przyrost mnożnika krytyczności za jednego odbiorcę strategicznego. Współczynnik jest wartościujący."
+    },
+    "critical_infrastructure_weight": {
+      "value": 0.18,
+      "status": "założenie modelowe, do kalibracji z ekspertami",
+      "comment": "Przyrost mnożnika krytyczności dla aktywa oznaczonego jako infrastruktura krytyczna. Współczynnik jest wartościujący."
+    }
+  },
+  "writeback": {
+    "enabled": false,
+    "table": "asset_plan_decision_audit"
+  }
+}

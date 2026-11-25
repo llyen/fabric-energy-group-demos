@@ -1,0 +1,5 @@
+strategy,budget_mpln_synthetic,selected_assets,capex_mpln_synthetic,expected_saidi_reduction_min,customers_in_scope,avg_failure_probability_12m,avg_health_index,delta_vs_age_saidi_min
+age_based,34.0,101,33.979,0.367,121993,0.5,50.67,0.0
+risk_based_greedy,34.0,179,33.943,0.958,281290,0.477,46.79,0.591
+mixed,34.0,153,33.966,0.852,209372,0.528,52.86,0.485
+risk_based_exact_knapsack,34.0,178,34.0,0.959,279877,0.479,47.03,0.592

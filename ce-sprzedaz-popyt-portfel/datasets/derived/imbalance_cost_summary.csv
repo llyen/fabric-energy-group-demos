@@ -1,0 +1,3 @@
+forecast_name,absolute_error_mwh,imbalance_cost_pln,cost_per_abs_error_pln_mwh,improvement_vs_baseline_pct
+baseline_prev_week,175036.21,21583895.13,123.31,0.0
+ml_point_forecast,58145.2,7976848.81,137.19,63.04

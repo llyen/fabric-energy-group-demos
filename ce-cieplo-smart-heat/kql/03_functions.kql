@@ -1,0 +1,15 @@
+.create-or-alter function with (folder='smart_heat') ScenarioWindow() {
+    range local_timestamp from datetime(2026-02-08T06:00:00+01:00) to datetime(2026-02-15T06:00:00+01:00) step 1h
+}
+.create-or-alter function with (folder='smart_heat') CurrentStorage() {
+    StorageTelemetry | summarize arg_max(local_timestamp, *) by storage_id
+}
+.create-or-alter function with (folder='smart_heat') HeatBalanceHourly() {
+    SourceTelemetry
+    | summarize heat_production_mwh=sum(heat_production_mwh), electricity_generation_mwh=sum(electricity_generation_mwh), emissions_tco2=sum(emissions_tco2), residual=max(abs(balance_residual_mwh)) by local_timestamp
+    | join kind=leftouter (StorageTelemetry | project local_timestamp, charge_mwh, discharge_mwh, soc_mwh) on local_timestamp
+    | join kind=leftouter (NetworkTelemetry | summarize network_losses_mwh=sum(heat_loss_mwh) by local_timestamp) on local_timestamp
+}
+.create-or-alter function with (folder='smart_heat') NegativePriceHours() {
+    ElectricityPrices | where price_pln_per_mwh < 0 | summarize negative_price_hours=count()
+}

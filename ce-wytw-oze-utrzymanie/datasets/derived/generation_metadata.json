@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "start": "2025-01-01T00:00:00+02:00",
+  "end": "2026-12-31T23:50:00+02:00",
+  "reference_event_d0": "2026-09-15T10:00:00+02:00",
+  "target_turbine": "WTG-W02-03",
+  "disclaimer": "Dane w 100% syntetyczne; nie są danymi Contoso Energia.",
+  "rows": {
+    "asset_registry.csv": 16,
+    "crew_calendar.csv": 150,
+    "dim_calendar.csv": 730,
+    "esp_scada_1h.csv": 52560,
+    "failure_events.csv": 36,
+    "hydro_scada_1h.csv": 52560,
+    "pv_scada_15min.csv": 280320,
+    "spare_parts.csv": 5,
+    "wind_scada_10min.csv": 630720,
+    "work_orders.csv": 10
+  }
+}

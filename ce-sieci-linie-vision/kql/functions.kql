@@ -1,0 +1,21 @@
+.create-or-alter function HighLoadSubstations(load_threshold:real=0.85) {
+  SubstationTelemetry
+  | summarize arg_max(event_timestamp_utc, *) by substation_id
+  | extend load_ratio = load_mw / available_capacity_mw
+  | where load_ratio >= load_threshold
+  | project substation_id, event_timestamp_utc, load_mw, available_capacity_mw, installed_capacity_mw, load_ratio, power_quality_index
+}
+
+.create-or-alter function UnverifiedVisionQueue(confidence_threshold:real=0.60) {
+  AiVisionDetection
+  | where confidence >= confidence_threshold and human_verified == 0
+  | project event_timestamp_utc, section_id, line_no, km_position, defect_class, confidence, acquisition_condition, frame_id
+  | order by confidence desc
+}
+
+.create-or-alter function ProtectionEventsLast(hours_back:int=24) {
+  ProtectionEvent
+  | where event_timestamp_utc > ago(hours_back * 1h)
+  | summarize events=count(), high_events=countif(severity == 'high') by substation_id
+  | order by high_events desc, events desc
+}

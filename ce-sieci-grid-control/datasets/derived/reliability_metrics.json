@@ -1,0 +1,9 @@
+{
+  "total_customers_synthetic": 286573,
+  "saidi_unplanned_min_per_customer_window": 36.41658495392099,
+  "saidi_planned_min_per_customer_window": 7.484407114417618,
+  "saifi_unplanned_per_customer_window": 0.31449578292442065,
+  "saifi_planned_per_customer_window": 0.10387929079152607,
+  "maifi_unplanned_per_customer_window": 0.0006141541596731025,
+  "split_planned_unplanned": true
+}

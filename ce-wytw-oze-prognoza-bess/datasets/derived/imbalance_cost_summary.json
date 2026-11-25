@@ -1,0 +1,9 @@
+{
+  "model_total_abs_error_mwh": 3409.815,
+  "baseline_total_abs_error_mwh": 8263.777,
+  "avoided_abs_error_mwh": 4853.962,
+  "model_imbalance_cost_pln_synthetic": 1146548.23,
+  "baseline_imbalance_cost_pln_synthetic": 2750100.02,
+  "synthetic_imbalance_cost_delta_pln": 1603551.78,
+  "note": "Cena rozliczeniowa niezbilansowania jest syntetycznym sygnałem rozliczeniowym, nie zwykłą ceną energii."
+}

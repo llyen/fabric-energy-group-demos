@@ -1,0 +1,26 @@
+.create-merge table MeterReading (
+  event_timestamp_utc: datetime,
+  local_timezone: string,
+  settlement_interval: string,
+  meter_id: string,
+  station_id: string,
+  phase: string,
+  net_energy_kwh: real,
+  voltage_v: real,
+  quality_flag: string,
+  ingestion_timestamp: datetime,
+  source_system: string,
+  data_version: string
+)
+
+.create-merge table MeterEvent (
+  event_timestamp_utc: datetime,
+  event_type: string,
+  meter_id: string,
+  station_id: string,
+  phase: string,
+  quality_flag: string,
+  source_system: string,
+  ingestion_timestamp: datetime,
+  data_version: string
+)

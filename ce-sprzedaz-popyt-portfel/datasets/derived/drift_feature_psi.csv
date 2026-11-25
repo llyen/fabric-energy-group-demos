@@ -1,0 +1,6 @@
+feature,psi,status
+temperature_c_forecast,0.1464,watch
+irradiance_w_m2_forecast,0.0382,ok
+load_lag_7d_mwh,0.0836,ok
+cooling_degree_forecast,0.0,ok
+heating_degree_forecast,0.1103,watch

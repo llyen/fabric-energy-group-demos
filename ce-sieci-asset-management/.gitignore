@@ -1,0 +1,11 @@
+.env
+*.env
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.fabric/
+.DS_Store
+Thumbs.db
+config.json
+*.pkl
+*.joblib

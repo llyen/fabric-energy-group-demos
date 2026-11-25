@@ -1,0 +1,2 @@
+section_count,budget_sections,priority_changed_sections,priority_changed_share_pct,ai_detection_confidence_threshold,preventable_outage_capture_rate,risk_avoidable_impact_kcm,age_avoidable_impact_kcm,avoidable_impact_improvement_kcm,avoidable_impact_improvement_pct,ai_high_conf_detections,ai_high_conf_outside_age_plan,ai_high_conf_outside_age_plan_pct,risk_precision_at_budget,risk_recall_at_budget,age_precision_at_budget,age_recall_at_budget,risk_model_auc
+253,18,12,66.7,0.6,0.7,2654,1451,1203,82.9,53,44,83.0,0.556,0.079,0.556,0.079,0.619
