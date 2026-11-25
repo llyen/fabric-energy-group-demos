@@ -151,8 +151,8 @@ def main() -> None:
     exported = 0
 
     if not args.only:
-        # README.md w katalogu glownym jest po angielsku; dokumentacja docx jest po polsku.
-        root_readme = ROOT / "README.pl.md"
+        # README.md w katalogu glownym jest po polsku (README.en.md to wersja angielska).
+        root_readme = ROOT / "README.md"
         if root_readme.is_file():
             raw = root_readme.read_text(encoding="utf-8")
             text = strip_relative_links(CONTROL_RE.sub("", raw))
